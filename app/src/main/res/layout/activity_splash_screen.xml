@@ -6,9 +6,13 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".activity.SplashScreen"
-    android:background="@drawable/bg_color">
+    android:background="@drawable/bg_color"
+    >
 
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/sccpre"/>
 
     <ImageView
         android:id="@+id/logo"
