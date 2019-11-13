@@ -23,19 +23,26 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="0dp"
         android:text="@string/start_bt"
+        android:textStyle="bold"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:layout_below="@+id/logo"
         android:background="@drawable/bg_button"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:layout_centerInParent="true"
+    <Button
+        android:id="@+id/bt_admin_admin"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="0dp"
+        android:text="Admin Login"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimary"
         android:layout_below="@+id/bt_login"
-        android:text="@string/admin_bt"/>
+        android:background="@drawable/bg_button"/>
 
 
 </RelativeLayout>
