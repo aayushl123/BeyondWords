@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_color"
+    android:background="@color/white"
     android:padding="20dp"
     tools:context=".activity.AgreementActivity">
 
@@ -17,7 +17,8 @@
             android:id="@+id/phase2_icon"
             android:layout_width="43dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_phase2"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/ic_question"
             android:text="@string/describe_sit"
             android:layout_marginLeft="10dp"/>
 
@@ -25,7 +26,7 @@
             android:id="@+id/text_view1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/colorPrimary"
             android:text="@string/describe_sit"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
@@ -40,41 +41,35 @@
         android:textColor="#000000"
         android:layout_below="@+id/phase2_heading"
         android:padding="20dp"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/text_bg"
         android:text="@string/phase2_ques"
         />
 
     <EditText
-        android:id="@+id/phase2_userResponse"
-        android:layout_width="wrap_content"
-        android:layout_height="339dp"
+        android:id="@+id/phase2_user_response"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/phase2_question"
+        android:layout_above="@+id/phase2_Next"
         android:layout_centerInParent="true"
-        android:background="#FFFFFF"
-        android:ems="100"
-        android:hint="   Your desciption goes here..."
-        android:padding="50dp"
-        android:translationY="20dp" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/text_bg"
+        android:textColor="@color/black"
 
-<!--
+        android:gravity="start"
+        android:hint="   Your desciption goes here..."
+        android:padding="10dp" />
+
     <Button
         android:id="@+id/phase2_Next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentRight="false"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bg_button"
-        android:lineSpacingExtra="18sp"
+        android:background="@drawable/bt_blue_bg"
         android:text="@string/phase2_Next"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimary"
-        android:translationY="-80dp"
-        android:visibility="visible"
-        tools:visibility="visible" />
--->
+        android:textColor="@color/white"
+         />
 
 </RelativeLayout>
