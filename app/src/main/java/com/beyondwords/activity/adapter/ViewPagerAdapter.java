@@ -30,13 +30,13 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
             case 3:
                 return new SurveyFragment4(); //ChildFragment3 at position 3
             case 4:
-                return new SurveyFragment5();
+                return new SurveyFragment5(); //childFragment4 at position 4
         }
         return null; //does not happen
     }
 
     @Override
     public int getCount() {
-        return 5; //three fragments
+        return 5; //five fragments
     }
 }

@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/bg_color"
+    android:background="@color/white"
+    android:padding="20dp"
     tools:context=".fragment.SurveyFragment5">
 
     <LinearLayout
-        android:id="@+id/linear"
+        android:id="@+id/phase3_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/question_icon"
             android:src="@drawable/ic_question"
-            android:tint="@color/white"
+            android:tint="@color/colorPrimary"
             android:layout_width="43dp"
             android:layout_height="60dp"
             android:layout_marginLeft="10dp"/>
@@ -28,20 +28,45 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="2dp"
             android:text="Identify a concern"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:visibility="visible" />
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <TextView
-        android:id="@+id/text_view2"
+        android:id="@+id/phase3_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linear"
-        android:textColor="#000000"
+        android:layout_below="@id/phase3_heading"
+        android:background="@drawable/text_bg"
         android:padding="20dp"
-        android:background="@drawable/bg_button"
-        android:text=""/>
+        android:text="@string/phase3_statement"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/phase3_response"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/phase3_question"
+        android:layout_above="@+id/Button_submit"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/text_bg"
+        android:textColor="@color/black"
+
+        android:gravity="start"
+        android:hint="   Your Concern goes here..."
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/Button_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bt_blue_bg"
+        android:text="@string/Submit_button"
+        android:textAllCaps="false"
+        android:textColor="@color/white"/>
 
 
 
