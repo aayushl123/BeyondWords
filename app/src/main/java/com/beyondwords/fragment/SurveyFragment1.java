@@ -14,12 +14,18 @@ import android.widget.Spinner;
 
 import com.beyondwords.R;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Locale;
 
 
-public class SurveyFragment1 extends Fragment {
+    public class SurveyFragment1 extends Fragment {
 
 
-    String[] country = { "India", "USA", "China", "Japan", "Other"};
+    String[] genderArray = { "Male", "Female", "Other"};
+
+
+    Spinner genderSpin,countrySpinner,homeSpinner,languageSpinner;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,15 +40,10 @@ public class SurveyFragment1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_survery_fragment1, container, false);
-
-        Spinner genderSpin = (Spinner)view.findViewById(R.id.gender_spinner);
-
-        //Creating the ArrayAdapter instance having the country list
-        ArrayAdapter  genderAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,country);
-        genderAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
-        //Setting the ArrayAdapter data on the Spinner
-        genderSpin.setAdapter(genderAdapter);
-
+        initiliaseViews(view);
+        setGenderArray();
+        setCountryAdapter();
+        setLanguageAdapter();
         return view;
     }
 
@@ -56,6 +57,67 @@ public class SurveyFragment1 extends Fragment {
     public void onDetach() {
         super.onDetach();
 
+    }
+
+    private void initiliaseViews(View view){
+        genderSpin = (Spinner)view.findViewById(R.id.gender_spinner);
+        countrySpinner =(Spinner)view.findViewById(R.id.citinzen_spinner);
+        homeSpinner=(Spinner)view.findViewById(R.id.home_spinner);
+        languageSpinner=(Spinner)view.findViewById(R.id.language_spinner);
+
+    }
+
+    private void setGenderArray(){
+        //Creating the ArrayAdapter instance having the gender list
+        ArrayAdapter  genderAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,genderArray);
+        genderAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
+        //Setting the ArrayAdapter data on the Spinner
+        genderSpin.setAdapter(genderAdapter);
+
+    }
+
+    private void setCountryAdapter(){
+        Locale[] locales = Locale.getAvailableLocales();
+        ArrayList<String> countries = new ArrayList<String>();
+        for (Locale locale : locales) {
+            String country = locale.getDisplayCountry();
+            if (country.trim().length() > 0 && !countries.contains(country)) {
+                countries.add(country);
+            }
+        }
+
+        Collections.sort(countries);
+        for (String country : countries) {
+            System.out.println(country);
+        }
+
+        ArrayAdapter  countryAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,countries);
+        countryAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
+        // Apply the adapter to the your spinner
+        countrySpinner.setAdapter(countryAdapter);
+        homeSpinner.setAdapter(countryAdapter);
+    }
+
+    private void setLanguageAdapter(){
+            Locale[] locales = Locale.getAvailableLocales();
+            ArrayList<String> languages = new ArrayList<String>();
+            for (Locale locale : locales) {
+                String language = locale.getDisplayLanguage();
+                System.out.println(language);
+                if (language.trim().length() > 0 && !languages.contains(language)) {
+                    languages.add(language);
+                }
+            }
+
+            Collections.sort(languages);
+            for (String language : languages) {
+                System.out.println(language);
+            }
+
+            ArrayAdapter  languageAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,languages);
+            languageAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
+            // Apply the adapter to the your spinner
+            languageSpinner.setAdapter(languageAdapter);
     }
 
 

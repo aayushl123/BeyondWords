@@ -85,11 +85,12 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"/>
 
-            <Spinner
+            <EditText
                 android:id="@+id/age_spinner"
                 android:layout_width="149dp"
                 android:layout_centerVertical="true"
                 android:layout_height="40dp"
+                android:inputType="number"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:backgroundTint="@color/colorPrimary"
