@@ -23,9 +23,10 @@ import java.util.Locale;
 
 
     String[] genderArray = { "Male", "Female", "Other"};
+    String[] socio={"Upper Class", "Upper Middle Class", "Middle Class", "Lower Middle Class", "Lower Class", "Not Working"};
+    String[] ethnicity={"North American Indian", "Chinese", "Filipino", "Japanese", "Korean", "Latin American", "South Asian", "South East Asian", "Other"};
 
-
-    Spinner genderSpin,countrySpinner,homeSpinner,languageSpinner;
+    Spinner genderSpin,countrySpinner,homeSpinner,languageSpinner, socioEconomicSpinner,ethnicitySpinner;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,8 @@ import java.util.Locale;
         setGenderArray();
         setCountryAdapter();
         setLanguageAdapter();
+        setSocioArray();
+        setEthnicityArray();
         return view;
     }
 
@@ -64,6 +67,8 @@ import java.util.Locale;
         countrySpinner =(Spinner)view.findViewById(R.id.citinzen_spinner);
         homeSpinner=(Spinner)view.findViewById(R.id.home_spinner);
         languageSpinner=(Spinner)view.findViewById(R.id.language_spinner);
+        socioEconomicSpinner=(Spinner)view.findViewById(R.id.socio_economic_spinner);
+        ethnicitySpinner=(Spinner)view.findViewById(R.id.ethnic_spinner);
 
     }
 
@@ -73,6 +78,24 @@ import java.util.Locale;
         genderAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
         //Setting the ArrayAdapter data on the Spinner
         genderSpin.setAdapter(genderAdapter);
+
+    }
+
+    private void setEthnicityArray(){
+        //Creating the ArrayAdapter instance having the gender list
+        ArrayAdapter  genderAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,ethnicity);
+        genderAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
+        //Setting the ArrayAdapter data on the Spinner
+        ethnicitySpinner.setAdapter(genderAdapter);
+
+    }
+
+    private void setSocioArray(){
+        //Creating the ArrayAdapter instance having the gender list
+        ArrayAdapter  genderAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,socio);
+        genderAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
+        //Setting the ArrayAdapter data on the Spinner
+        socioEconomicSpinner.setAdapter(genderAdapter);
 
     }
 
