@@ -8,6 +8,7 @@ import com.beyondwords.fragment.SurveyFragment1;
 import com.beyondwords.fragment.SurveyFragment2;
 import com.beyondwords.fragment.SurveyFragment3;
 import com.beyondwords.fragment.SurveyFragment4;
+import com.beyondwords.fragment.SurveyFragment5;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter
 {
@@ -28,12 +29,14 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
                 return new SurveyFragment3(); //ChildFragment3 at position 2
             case 3:
                 return new SurveyFragment4(); //ChildFragment3 at position 3
+            case 4:
+                return new SurveyFragment5();
         }
         return null; //does not happen
     }
 
     @Override
     public int getCount() {
-        return 4; //three fragments
+        return 5; //three fragments
     }
 }
