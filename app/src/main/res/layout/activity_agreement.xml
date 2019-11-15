@@ -32,21 +32,20 @@
     </LinearLayout>
 
 
-
     <TextView
-            android:id="@+id/text_view2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:layout_below="@+id/linear"
-            android:padding="20dp"
-            android:background="@drawable/bg_button"
-            android:text="@string/terms_statement"
-        />
+        android:id="@+id/text_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_button"
+        android:padding="20dp"
+        android:text="@string/terms_statement"
+        android:textColor="#000000" />
 
 
     <CheckBox
-        android:id="@+id/chkIos"
+        android:id="@+id/chk_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -56,18 +55,33 @@
         android:textColorHint="@color/white"
         android:buttonTint="@color/white"
         android:layout_above="@id/bt_agree"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="I agree" />
+        android:text="I agree to the terms and conditions" />
 
     <Button
         android:id="@+id/bt_agree"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
         android:layout_alignParentBottom="true"
-        android:text="@string/start_bt"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/bg_button"
+        android:text="Accept"
+        android:enabled="false"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimary"
-        android:background="@drawable/bg_button"/>
+        android:textColor="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/bt_decline"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_button"
+        android:text="Decline"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary" />
 
 </RelativeLayout>
