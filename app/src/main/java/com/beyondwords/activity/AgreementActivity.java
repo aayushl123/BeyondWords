@@ -19,6 +19,7 @@ import com.beyondwords.R;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
+import static com.beyondwords.R.drawable.bg_button_disabled;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
@@ -32,7 +33,9 @@ public class AgreementActivity extends Activity {
 
         final Button agreeBt = (Button) findViewById(R.id.bt_agree);
         final Button declineBt = (Button) findViewById(R.id.bt_decline);
-        CheckBox checkBox= ( CheckBox ) findViewById( R.id.chk_box);
+        CheckBox checkBox = ( CheckBox ) findViewById( R.id.chk_box);
+        agreeBt.setBackground(getResources().getDrawable(bg_button_disabled));
+
 
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
@@ -52,7 +55,7 @@ public class AgreementActivity extends Activity {
                     agreeBt.setEnabled(TRUE);
                 }
                 else{
-                    agreeBt.setBackground(getResources().getDrawable(R.drawable.bg_button_disabled));
+                    agreeBt.setBackground(getResources().getDrawable(bg_button_disabled));
                     agreeBt.setEnabled(FALSE);
                 }
             }
