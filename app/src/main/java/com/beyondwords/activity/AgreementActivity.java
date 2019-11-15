@@ -1,11 +1,14 @@
 package com.beyondwords.activity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,10 +36,12 @@ public class AgreementActivity extends Activity {
 
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
                 if ( isChecked )
                 {
+                    agreeBt.setBackground(getResources().getDrawable(R.drawable.bg_button));
                     agreeBt.setOnClickListener(new View.OnClickListener(){
 
                         @Override
@@ -47,6 +52,7 @@ public class AgreementActivity extends Activity {
                     agreeBt.setEnabled(TRUE);
                 }
                 else{
+                    agreeBt.setBackground(getResources().getDrawable(R.drawable.bg_button_disabled));
                     agreeBt.setEnabled(FALSE);
                 }
             }
