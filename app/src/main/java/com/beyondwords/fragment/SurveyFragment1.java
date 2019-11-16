@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -24,9 +25,11 @@ import java.util.Locale;
 
     String[] genderArray = { "Male", "Female", "Other"};
     String[] socio={"Upper Class", "Upper Middle Class", "Middle Class", "Lower Middle Class", "Lower Class", "Not Working"};
-    String[] ethnicity={"North American Indian", "Chinese", "Filipino", "Japanese", "Korean", "Latin American", "South Asian", "South East Asian", "Other"};
+    String[] ethnicity={"African","Asian","Caribbean","North American","North American Indian", "Chinese", "Filipino", "Japanese", "Korean", "Latin American", "South Asian", "South East Asian", "Other"};
+    String[] religion={"Austroasiatic","Buddhism","Chinese","Christianity","Druze","Gnosticism","Hinduism","Islam","Jainism","Judaism",
+            "Korean","Meivazhi","Manichaeism","Mazdakism","Nepalese religion","Paganism","Sarnaism","Sikhism","Taoism"};
 
-    Spinner genderSpin,countrySpinner,homeSpinner,languageSpinner, socioEconomicSpinner,ethnicitySpinner;
+    Spinner genderSpin,countrySpinner,homeSpinner,languageSpinner, socioEconomicSpinner,ethnicitySpinner,religionSpinner;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ import java.util.Locale;
         setLanguageAdapter();
         setSocioArray();
         setEthnicityArray();
+        setReligionArray();
         return view;
     }
 
@@ -69,6 +73,7 @@ import java.util.Locale;
         languageSpinner=(Spinner)view.findViewById(R.id.language_spinner);
         socioEconomicSpinner=(Spinner)view.findViewById(R.id.socio_economic_spinner);
         ethnicitySpinner=(Spinner)view.findViewById(R.id.ethnic_spinner);
+        religionSpinner=(Spinner)view.findViewById(R.id.religion_spinner);
 
     }
 
@@ -98,6 +103,13 @@ import java.util.Locale;
         socioEconomicSpinner.setAdapter(genderAdapter);
 
     }
+   private void setReligionArray()
+   {
+       ArrayAdapter religionAdapter=new ArrayAdapter(getContext(),R.layout.spinner_item_layout,religion);
+       religionAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
+       religionSpinner.setAdapter(religionAdapter);
+
+   }
 
     private void setCountryAdapter(){
         Locale[] locales = Locale.getAvailableLocales();
