@@ -8,8 +8,6 @@
       <module fileurl="file://$PROJECT_DIR$/android-learning-BeyondWords.iml" filepath="$PROJECT_DIR$/android-learning-BeyondWords.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/android-learning-app.iml" filepath="$PROJECT_DIR$/app/android-learning-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/my-android-learning-BeyondWords.iml" filepath="$PROJECT_DIR$/my-android-learning-BeyondWords.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/my-android-learning-app.iml" filepath="$PROJECT_DIR$/app/my-android-learning-app.iml" />
     </modules>
   </component>
 </project>
