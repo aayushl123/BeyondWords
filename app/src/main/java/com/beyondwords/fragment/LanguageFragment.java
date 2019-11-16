@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.SingleAdapter;
@@ -22,13 +21,12 @@ import java.util.Collections;
 import java.util.Locale;
 
 
-public class SurveyFragment3 extends Fragment {
+public class LanguageFragment extends Fragment {
 
 
     RecyclerView recyclerView;
     private SingleAdapter adapter;
-    ArrayList<String> countries = new ArrayList<String>();
-
+    ArrayList<String> languages = new ArrayList<String>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,18 +36,36 @@ public class SurveyFragment3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        setCountryAdapter();
-        View view= inflater.inflate(R.layout.fragment_survery_fragment3, container, false);
-        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView_country);
+        setLanguageAdapter();
+        View view= inflater.inflate(R.layout.fragment_language, container, false);
+        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView_language);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
 
-        adapter = new SingleAdapter(getContext(), countries);
+        adapter = new SingleAdapter(getContext(), languages);
         recyclerView.setAdapter(adapter);
         return view;
     }
+
+
+    private void setLanguageAdapter(){
+        Locale[] locales = Locale.getAvailableLocales();
+        for (Locale locale : locales) {
+            String language = locale.getDisplayLanguage();
+            System.out.println(language);
+            if (language.trim().length() > 0 && !languages.contains(language)) {
+                languages.add(language);
+            }
+        }
+
+        Collections.sort(languages);
+        for (String language : languages) {
+            System.out.println(language);
+        }
+
+    }
+
 
 
     @Override
@@ -61,25 +77,7 @@ public class SurveyFragment3 extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-    }
-
-
-
-    private void setCountryAdapter(){
-        Locale[] locales = Locale.getAvailableLocales();
-        for (Locale locale : locales) {
-            String country = locale.getDisplayCountry();
-            if (country.trim().length() > 0 && !countries.contains(country)) {
-                countries.add(country);
-            }
-        }
-
-        Collections.sort(countries);
-        for (String country : countries) {
-            System.out.println(country);
-        }
 
     }
-
 
 }

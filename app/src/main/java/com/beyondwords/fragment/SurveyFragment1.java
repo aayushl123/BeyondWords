@@ -34,10 +34,6 @@ import java.util.Locale;
 
     ArrayList<String> genderList =
                 new ArrayList<String>(Arrays.asList(genderArray));
-    String[] socio={"Upper Class", "Upper Middle Class", "Middle Class", "Lower Middle Class", "Lower Class", "Not Working"};
-    String[] ethnicity={"African","Asian","Caribbean","North American","North American Indian", "Chinese", "Filipino", "Japanese", "Korean", "Latin American", "South Asian", "South East Asian", "Other"};
-    String[] religion={"Austroasiatic","Buddhism","Chinese","Christianity","Druze","Gnosticism","Hinduism","Islam","Jainism","Judaism",
-            "Korean","Meivazhi","Manichaeism","Mazdakism","Nepalese religion","Paganism","Sarnaism","Sikhism","Taoism"};
 
     Spinner genderSpin,countrySpinner,homeSpinner,languageSpinner, socioEconomicSpinner,ethnicitySpinner,religionSpinner;
 
@@ -86,63 +82,5 @@ import java.util.Locale;
         religionSpinner=(Spinner)view.findViewById(R.id.religion_spinner);
 
     }
-
-    private void setGenderArray(){
-        //Creating the ArrayAdapter instance having the gender list
-        ArrayAdapter  genderAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,genderArray);
-        genderAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
-        //Setting the ArrayAdapter data on the Spinner
-        genderSpin.setAdapter(genderAdapter);
-
-    }
-
-    private void setEthnicityArray(){
-        //Creating the ArrayAdapter instance having the gender list
-        ArrayAdapter  genderAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,ethnicity);
-        genderAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
-        //Setting the ArrayAdapter data on the Spinner
-        ethnicitySpinner.setAdapter(genderAdapter);
-
-    }
-
-    private void setSocioArray(){
-        //Creating the ArrayAdapter instance having the gender list
-        ArrayAdapter  genderAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,socio);
-        genderAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
-        //Setting the ArrayAdapter data on the Spinner
-        socioEconomicSpinner.setAdapter(genderAdapter);
-
-    }
-   private void setReligionArray()
-   {
-       ArrayAdapter religionAdapter=new ArrayAdapter(getContext(),R.layout.spinner_item_layout,religion);
-       religionAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
-       religionSpinner.setAdapter(religionAdapter);
-
-   }
-
-
-    private void setLanguageAdapter(){
-            Locale[] locales = Locale.getAvailableLocales();
-            ArrayList<String> languages = new ArrayList<String>();
-            for (Locale locale : locales) {
-                String language = locale.getDisplayLanguage();
-                System.out.println(language);
-                if (language.trim().length() > 0 && !languages.contains(language)) {
-                    languages.add(language);
-                }
-            }
-
-            Collections.sort(languages);
-            for (String language : languages) {
-                System.out.println(language);
-            }
-
-            ArrayAdapter  languageAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,languages);
-            languageAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
-            // Apply the adapter to the your spinner
-            languageSpinner.setAdapter(languageAdapter);
-    }
-
 
 }

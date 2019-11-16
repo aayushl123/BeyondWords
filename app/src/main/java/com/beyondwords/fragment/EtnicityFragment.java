@@ -12,22 +12,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.SingleAdapter;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Locale;
+import java.util.Arrays;
 
 
-public class SurveyFragment3 extends Fragment {
+public class EtnicityFragment extends Fragment {
 
 
     RecyclerView recyclerView;
     private SingleAdapter adapter;
-    ArrayList<String> countries = new ArrayList<String>();
+    String[] ethnicity={"African","Asian","Caribbean","North American","North American Indian", "Chinese", "Filipino", "Japanese", "Korean", "Latin American", "South Asian", "South East Asian", "Other"};
+    ArrayList<String> ethnicityArrayList =
+            new ArrayList<String>(Arrays.asList(ethnicity));
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,14 +39,13 @@ public class SurveyFragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        setCountryAdapter();
-        View view= inflater.inflate(R.layout.fragment_survery_fragment3, container, false);
-        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView_country);
+        View view= inflater.inflate(R.layout.fragment_etnicity, container, false);
+        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView_ethic);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
 
-        adapter = new SingleAdapter(getContext(), countries);
+        adapter = new SingleAdapter(getContext(), ethnicityArrayList);
         recyclerView.setAdapter(adapter);
         return view;
     }
@@ -61,25 +60,9 @@ public class SurveyFragment3 extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-    }
-
-
-
-    private void setCountryAdapter(){
-        Locale[] locales = Locale.getAvailableLocales();
-        for (Locale locale : locales) {
-            String country = locale.getDisplayCountry();
-            if (country.trim().length() > 0 && !countries.contains(country)) {
-                countries.add(country);
-            }
-        }
-
-        Collections.sort(countries);
-        for (String country : countries) {
-            System.out.println(country);
-        }
 
     }
+
 
 
 }

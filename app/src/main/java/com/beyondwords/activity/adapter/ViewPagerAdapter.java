@@ -1,9 +1,15 @@
 package com.beyondwords.activity.adapter;
 
+import android.icu.util.EthiopicCalendar;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.beyondwords.fragment.EtnicityFragment;
+import com.beyondwords.fragment.LanguageFragment;
+import com.beyondwords.fragment.ReligionFragment;
+import com.beyondwords.fragment.SocioFragment;
 import com.beyondwords.fragment.SurveyFragment1;
 import com.beyondwords.fragment.SurveyFragment2;
 import com.beyondwords.fragment.SurveyFragment3;
@@ -29,15 +35,20 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
             case 2:
                 return new SurveyFragment3(); //ChildFragment3 at position 2
             case 3:
-                return new SurveyFragment4(); //ChildFragment3 at position 3
+                return new LanguageFragment(); //ChildFragment3 at position 3
             case 4:
-                return new SurveyFragment5(); //childFragment4 at position 4
+                return new EtnicityFragment(); //childFragment4 at position 4
+            case 5:
+                return new ReligionFragment(); //childFragment4 at position 4
+
+            case 6:
+                return new SocioFragment(); //childFragment4 at position 4
         }
         return null; //does not happen
     }
 
     @Override
     public int getCount() {
-        return 5; //five fragments
+        return 6; //five fragments
     }
 }
