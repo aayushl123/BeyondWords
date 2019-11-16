@@ -31,9 +31,23 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/forward_arrow_bt"
         android:layout_marginBottom="8dp"
+        android:layout_above="@+id/phase2_next"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp" />
+    <Button
+        android:id="@+id/phase2_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bt_blue_bg"
+        android:text="@string/phase2_Next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        />
 
 
 </RelativeLayout>

@@ -5,6 +5,9 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +17,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.beyondwords.R;
+import com.beyondwords.activity.adapter.SingleAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Locale;
 
@@ -23,7 +28,12 @@ import java.util.Locale;
     public class SurveyFragment1 extends Fragment {
 
 
+    RecyclerView recyclerView;
+    private SingleAdapter adapter;
     String[] genderArray = { "Male", "Female", "Other"};
+
+    ArrayList<String> genderList =
+                new ArrayList<String>(Arrays.asList(genderArray));
     String[] socio={"Upper Class", "Upper Middle Class", "Middle Class", "Lower Middle Class", "Lower Class", "Not Working"};
     String[] ethnicity={"African","Asian","Caribbean","North American","North American Indian", "Chinese", "Filipino", "Japanese", "Korean", "Latin American", "South Asian", "South East Asian", "Other"};
     String[] religion={"Austroasiatic","Buddhism","Chinese","Christianity","Druze","Gnosticism","Hinduism","Islam","Jainism","Judaism",
@@ -44,13 +54,13 @@ import java.util.Locale;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_survery_fragment1, container, false);
-        initiliaseViews(view);
-        setGenderArray();
-        setCountryAdapter();
-        setLanguageAdapter();
-        setSocioArray();
-        setEthnicityArray();
-        setReligionArray();
+        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerViewGender);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+
+        adapter = new SingleAdapter(getContext(), genderList);
+        recyclerView.setAdapter(adapter);
         return view;
     }
 
@@ -111,27 +121,6 @@ import java.util.Locale;
 
    }
 
-    private void setCountryAdapter(){
-        Locale[] locales = Locale.getAvailableLocales();
-        ArrayList<String> countries = new ArrayList<String>();
-        for (Locale locale : locales) {
-            String country = locale.getDisplayCountry();
-            if (country.trim().length() > 0 && !countries.contains(country)) {
-                countries.add(country);
-            }
-        }
-
-        Collections.sort(countries);
-        for (String country : countries) {
-            System.out.println(country);
-        }
-
-        ArrayAdapter  countryAdapter = new ArrayAdapter(getContext(),R.layout.spinner_item_layout,countries);
-        countryAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
-        // Apply the adapter to the your spinner
-        countrySpinner.setAdapter(countryAdapter);
-        homeSpinner.setAdapter(countryAdapter);
-    }
 
     private void setLanguageAdapter(){
             Locale[] locales = Locale.getAvailableLocales();

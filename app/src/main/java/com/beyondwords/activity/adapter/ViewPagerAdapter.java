@@ -9,6 +9,7 @@ import com.beyondwords.fragment.SurveyFragment2;
 import com.beyondwords.fragment.SurveyFragment3;
 import com.beyondwords.fragment.SurveyFragment4;
 import com.beyondwords.fragment.SurveyFragment5;
+import com.beyondwords.fragment.SurveyFragment6;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter
 {
