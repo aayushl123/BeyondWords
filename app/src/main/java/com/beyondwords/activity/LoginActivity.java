@@ -1,6 +1,5 @@
 package com.beyondwords.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,5 +24,7 @@ public class LoginActivity extends Activity {
                 startActivity(new Intent(LoginActivity.this, AgreementActivity.class));
             }
         });
+
+
     }
 }

@@ -1,6 +1,7 @@
 package com.beyondwords.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.ViewPagerAdapter;
+import com.beyondwords.fragment.SurveyFragment4;
 
 public class SurveyActivity extends AppCompatActivity {
 
@@ -20,6 +22,7 @@ public class SurveyActivity extends AppCompatActivity {
 
         fowardArrowBt=findViewById(R.id.forward_arrow_bt);
         backwardArrowBt=findViewById(R.id.backward_arrow_bt);
+
         final ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
 
@@ -37,5 +40,7 @@ public class SurveyActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
             }
         });
+
+
     }
 }
