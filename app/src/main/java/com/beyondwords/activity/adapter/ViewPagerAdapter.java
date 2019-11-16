@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.beyondwords.fragment.EtnicityFragment;
 import com.beyondwords.fragment.LanguageFragment;
+import com.beyondwords.fragment.ProfessionalInfo1Fragment;
+import com.beyondwords.fragment.ProfessionalInfo2Fragment;
 import com.beyondwords.fragment.ReligionFragment;
 import com.beyondwords.fragment.SocioFragment;
 import com.beyondwords.fragment.SurveyFragment1;
@@ -43,12 +45,16 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
 
             case 6:
                 return new SocioFragment(); //childFragment4 at position 4
+            case 7:
+                return new ProfessionalInfo1Fragment(); //childFragment4 at position 4
+            case 8:
+                return new ProfessionalInfo2Fragment(); //childFragment4 at position 4
         }
         return null; //does not happen
     }
 
     @Override
     public int getCount() {
-        return 6; //five fragments
+        return 9; //five fragments
     }
 }

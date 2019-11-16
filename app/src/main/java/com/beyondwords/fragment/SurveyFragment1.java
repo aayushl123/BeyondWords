@@ -72,15 +72,6 @@ import java.util.Locale;
 
     }
 
-    private void initiliaseViews(View view){
-        genderSpin = (Spinner)view.findViewById(R.id.gender_spinner);
-        countrySpinner =(Spinner)view.findViewById(R.id.citinzen_spinner);
-        homeSpinner=(Spinner)view.findViewById(R.id.home_spinner);
-        languageSpinner=(Spinner)view.findViewById(R.id.language_spinner);
-        socioEconomicSpinner=(Spinner)view.findViewById(R.id.socio_economic_spinner);
-        ethnicitySpinner=(Spinner)view.findViewById(R.id.ethnic_spinner);
-        religionSpinner=(Spinner)view.findViewById(R.id.religion_spinner);
 
-    }
 
 }

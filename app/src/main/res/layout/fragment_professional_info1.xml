@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.SurveyFragment1"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="6dp">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="@dimen/heading_size"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_below="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/heading_size"
+            android:background="@drawable/bg_color">
+
+            <ImageView
+                android:id="@+id/profession_ic"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:tint="@color/white"
+                android:src="@drawable/ic_gender"/>
+
+            <TextView
+                android:id="@+id/professio_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/heading_size"
+                android:layout_toRightOf="@id/profession_ic"
+                android:layout_marginLeft="10dp"
+                android:text="Professional Training"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+
+            <EditText
+                android:id="@+id/age_spinner"
+                android:layout_width="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:layout_below="@+id/professio_text"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="@dimen/heading_size"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_below="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@drawable/bg_color">
+
+            <ImageView
+                android:id="@+id/profession_status_ic"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:tint="@color/white"
+                android:src="@drawable/ic_gender"/>
+
+
+            <TextView
+                android:id="@+id/profession_status_ic_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/heading_size"
+                android:layout_toRightOf="@id/profession_status_ic"
+                android:layout_marginLeft="10dp"
+                android:text="Professional Status"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+            <EditText
+                android:id="@+id/profession_status_text"
+                android:layout_width="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:backgroundTint="@color/white"
+                android:layout_below="@+id/profession_status_ic"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"/>
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="@dimen/heading_size"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_below="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@drawable/bg_color">
+
+            <ImageView
+                android:id="@+id/organisation_ic"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:tint="@color/white"
+                android:src="@drawable/ic_gender"/>
+
+            <TextView
+                android:id="@+id/organisation_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/heading_size"
+                android:layout_toRightOf="@id/organisation_ic"
+                android:layout_marginLeft="10dp"
+                android:text="Type of organization"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+
+
+            <EditText
+                android:id="@+id/organisation_ed_view"
+                android:layout_width="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:layout_below="@+id/organisation_text"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+
