@@ -25,15 +25,19 @@ import static java.lang.Boolean.TRUE;
 
 public class AgreementActivity extends Activity {
 
+
+    Button agreeBt,declineBt;
+    CheckBox checkBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agreement);
         setTitle(R.string.terms_cond);
 
-        final Button agreeBt = (Button) findViewById(R.id.bt_agree);
-        final Button declineBt = (Button) findViewById(R.id.bt_decline);
-        CheckBox checkBox = ( CheckBox ) findViewById( R.id.chk_box);
+         agreeBt = (Button) findViewById(R.id.bt_agree);
+         declineBt = (Button) findViewById(R.id.bt_decline);
+        checkBox = (CheckBox)findViewById(R.id.chk_box);
+
         agreeBt.setBackground(getResources().getDrawable(bg_button_disabled));
 
 
@@ -50,6 +54,7 @@ public class AgreementActivity extends Activity {
                         @Override
                         public void onClick(View v) {
                             startActivity(new Intent(AgreementActivity.this, SurveyActivity.class));
+                            finish();
                         }
                     });
                     agreeBt.setEnabled(TRUE);
@@ -66,7 +71,7 @@ public class AgreementActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AgreementActivity.this, LoginActivity.class));
+                finish();
             }
         });
     }
