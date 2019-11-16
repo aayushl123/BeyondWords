@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,9 @@ import com.beyondwords.R;
 
 public class SurveyFragment4 extends Fragment {
 
+    private Button nextBt;
+    private ViewPager viewPager;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +32,18 @@ public class SurveyFragment4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_survey_fragment4, container, false);
+        View view= inflater.inflate(R.layout.fragment_survey_fragment4, container, false);
+        nextBt=(Button)view.findViewById(R.id.phase2_next);
+        viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
+
+
+        nextBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+            }
+        });
+        return view;
 
     }
 

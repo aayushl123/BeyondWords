@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/phase3_question"
-        android:layout_above="@+id/Button_submit"
+        android:layout_above="@+id/submit_bt"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/text_bg"
@@ -58,7 +58,7 @@
         android:padding="10dp" />
 
     <Button
-        android:id="@+id/Button_submit"
+        android:id="@+id/submit_bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

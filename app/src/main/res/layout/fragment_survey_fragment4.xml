@@ -50,18 +50,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/phase2_question"
-        android:layout_above="@+id/phase2_Next"
+        android:layout_above="@+id/phase2_next"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/text_bg"
         android:textColor="@color/black"
-
         android:gravity="start"
         android:hint="   Your desciption goes here..."
         android:padding="10dp" />
 
     <Button
-        android:id="@+id/phase2_Next"
+        android:id="@+id/phase2_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
