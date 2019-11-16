@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.SurveyFragment1"
+    tools:context=".fragment.GenderFragment"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -38,6 +38,14 @@
                 android:text="Home Country"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:src="@drawable/dotted"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/Home_text"
+                android:layerType="software" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_marginTop="20dp"

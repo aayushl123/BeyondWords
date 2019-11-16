@@ -41,7 +41,7 @@ public class SocioFragment extends Fragment {
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView_socio);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
         adapter = new SingleAdapter(getContext(), socioArrayList);
         recyclerView.setAdapter(adapter);

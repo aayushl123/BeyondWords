@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.Locale;
 
 
-public class SurveyFragment3 extends Fragment {
+public class CountryFragment extends Fragment {
 
 
     RecyclerView recyclerView;
@@ -44,7 +44,7 @@ public class SurveyFragment3 extends Fragment {
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView_country);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
         adapter = new SingleAdapter(getContext(), countries);
         recyclerView.setAdapter(adapter);

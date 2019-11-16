@@ -1,4 +1,4 @@
-    package com.beyondwords.fragment;
+package com.beyondwords.fragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.SingleAdapter;
@@ -25,23 +23,17 @@ import java.util.Collections;
 import java.util.Locale;
 
 
-    public class SurveyFragment1 extends Fragment {
+public class CitizenFragment extends Fragment {
 
 
     RecyclerView recyclerView;
     private SingleAdapter adapter;
-    String[] genderArray = { "Male", "Female", "Other"};
+    ArrayList<String> countries = new ArrayList<String>();
 
-    ArrayList<String> genderList =
-                new ArrayList<String>(Arrays.asList(genderArray));
-
-    Spinner genderSpin,countrySpinner,homeSpinner,languageSpinner, socioEconomicSpinner,ethnicitySpinner,religionSpinner;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
     }
 
@@ -49,15 +41,23 @@ import java.util.Locale;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_survery_fragment1, container, false);
-        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerViewGender);
+        setCountryAdapter();
+        View view= inflater.inflate(R.layout.fragment_survey_fragment2, container, false);
+        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView_citizen);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
-        adapter = new SingleAdapter(getContext(), genderList);
+        adapter = new SingleAdapter(getContext(), countries);
         recyclerView.setAdapter(adapter);
+
+
         return view;
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+
     }
 
     @Override
@@ -69,9 +69,22 @@ import java.util.Locale;
     @Override
     public void onDetach() {
         super.onDetach();
-
     }
 
+    private void setCountryAdapter(){
+        Locale[] locales = Locale.getAvailableLocales();
+        for (Locale locale : locales) {
+            String country = locale.getDisplayCountry();
+            if (country.trim().length() > 0 && !countries.contains(country)) {
+                countries.add(country);
+            }
+        }
 
+        Collections.sort(countries);
+        for (String country : countries) {
+            System.out.println(country);
+        }
+
+    }
 
 }
