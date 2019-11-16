@@ -25,6 +25,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         />
+
+
+
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
@@ -34,7 +38,31 @@
         android:layout_above="@+id/phase2_next"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp" >
+
+
+
+    </androidx.viewpager.widget.ViewPager>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:layout_below="@+id/backward_arrow_bt">
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabDots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="0dp"/>
+    </RelativeLayout>
+
+
+
+
     <Button
         android:id="@+id/phase2_next"
         android:layout_width="match_parent"

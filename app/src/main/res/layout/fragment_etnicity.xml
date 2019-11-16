@@ -24,6 +24,8 @@
                 android:id="@+id/ethic_icon"
                 android:layout_width="40dp"
                 android:tint="@color/white"
+
+                android:layout_marginTop="20dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_religion"/>
 
@@ -32,6 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
+
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/ethic_icon"
                 android:text="Ethicity"

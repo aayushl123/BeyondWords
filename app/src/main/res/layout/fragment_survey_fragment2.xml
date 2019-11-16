@@ -24,6 +24,8 @@
             <ImageView
                 android:id="@+id/citizen_icon"
                 android:layout_width="40dp"
+
+                android:layout_marginTop="20dp"
                 android:layout_height="30dp"
                 android:tint="@color/white"
                 android:src="@drawable/ic_country"/>
@@ -33,6 +35,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/heading_size"
+
+                android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/citizen_icon"
                 android:layout_marginLeft="10dp"
                 android:text="Citizenship"

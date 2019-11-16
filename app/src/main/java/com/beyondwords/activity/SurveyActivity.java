@@ -9,10 +9,12 @@ import android.widget.ImageView;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.ViewPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 public class SurveyActivity extends AppCompatActivity {
 
     ImageView fowardArrowBt,backwardArrowBt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,13 @@ public class SurveyActivity extends AppCompatActivity {
         fowardArrowBt=findViewById(R.id.forward_arrow_bt);
         backwardArrowBt=findViewById(R.id.backward_arrow_bt);
 
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
+
         final ViewPager viewPager = findViewById(R.id.view_pager);
+
+
+        tabLayout.setupWithViewPager(viewPager, true);
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
 
 

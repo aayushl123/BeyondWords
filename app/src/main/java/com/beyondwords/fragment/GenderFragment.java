@@ -53,7 +53,7 @@ import java.util.Locale;
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerViewGender);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
         adapter = new SingleAdapter(getContext(), genderList);
         recyclerView.setAdapter(adapter);

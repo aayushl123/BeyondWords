@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.GenderFragment"
+
     app:cardCornerRadius="10dp"
     app:cardElevation="6dp">
 
@@ -13,7 +14,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_color"
-    android:padding="20dp"
+    android:padding="10dp"
 
     tools:context=".activity.AgreementActivity">
 
@@ -25,6 +26,8 @@
         <ImageView
             android:id="@+id/phase2_icon"
             android:layout_width="43dp"
+
+            android:layout_marginTop="20dp"
             android:layout_height="60dp"
             android:tint="@color/white"
             android:src="@drawable/ic_question"
@@ -34,6 +37,8 @@
         <TextView
             android:id="@+id/text_view1"
             android:layout_width="wrap_content"
+
+            android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:text="@string/describe_sit"
