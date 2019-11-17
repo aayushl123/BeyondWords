@@ -1,6 +1,7 @@
 package com.beyondwords.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -19,6 +20,8 @@ public class SurveyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
         fowardArrowBt=findViewById(R.id.forward_arrow_bt);
         backwardArrowBt=findViewById(R.id.backward_arrow_bt);
