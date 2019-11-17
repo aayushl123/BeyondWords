@@ -33,16 +33,16 @@ public class ConcernFragment1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_survey_fragment4, container, false);
-        //nextBt=(Button)view.findViewById(R.id.phase2_next);
+        nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
 
 
-        /*nextBt.setOnClickListener(new View.OnClickListener() {
+        nextBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
             }
-        });*/
+        });
         return view;
 
     }

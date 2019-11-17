@@ -8,11 +8,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.SingleAdapter;
@@ -28,6 +30,8 @@ public class CountryFragment extends Fragment {
     RecyclerView recyclerView;
     private SingleAdapter adapter;
     ArrayList<String> countries = new ArrayList<String>();
+    private Button nextBt;
+    private ViewPager viewPager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,17 @@ public class CountryFragment extends Fragment {
 
         adapter = new SingleAdapter(getContext(), countries);
         recyclerView.setAdapter(adapter);
+
+        nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
+        viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
+
+
+        nextBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+            }
+        });
         return view;
     }
 

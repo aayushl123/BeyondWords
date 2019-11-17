@@ -5,20 +5,25 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.beyondwords.R;
 
 
 public class ProfessionalInfo1Fragment extends Fragment {
 
+    private Button nextBt;
+    private ViewPager viewPager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
     }
 
@@ -26,7 +31,19 @@ public class ProfessionalInfo1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_professional_info1, container, false);
+
+        View view= inflater.inflate(R.layout.fragment_professional_info1, container, false);
+        nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
+        viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
+
+
+        nextBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+            }
+        });
+        return view;
     }
 
 

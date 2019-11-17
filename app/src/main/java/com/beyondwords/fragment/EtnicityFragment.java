@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.SingleAdapter;
@@ -28,6 +30,8 @@ public class EtnicityFragment extends Fragment {
     String[] ethnicity={"African","Asian","Caribbean","North American","North American Indian", "Chinese", "Filipino", "Japanese", "Korean", "Latin American", "South Asian", "South East Asian", "Other"};
     ArrayList<String> ethnicityArrayList =
             new ArrayList<String>(Arrays.asList(ethnicity));
+    private Button nextBt;
+    private ViewPager viewPager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,17 @@ public class EtnicityFragment extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
+
+        nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
+        viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
+
+
+        nextBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+            }
+        });
 
         adapter = new SingleAdapter(getContext(), ethnicityArrayList);
         recyclerView.setAdapter(adapter);

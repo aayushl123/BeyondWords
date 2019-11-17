@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.SingleAdapter;
@@ -27,6 +29,8 @@ public class SocioFragment extends Fragment {
     String[] socio={"Upper Class", "Upper Middle Class", "Middle Class", "Lower Middle Class", "Lower Class", "Not Working"};
     ArrayList<String> socioArrayList =
             new ArrayList<String>(Arrays.asList(socio));
+    private Button nextBt;
+    private ViewPager viewPager;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,16 @@ public class SocioFragment extends Fragment {
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
         adapter = new SingleAdapter(getContext(), socioArrayList);
+        nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
+        viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
+
+
+        nextBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+            }
+        });
         recyclerView.setAdapter(adapter);
         return view;
     }

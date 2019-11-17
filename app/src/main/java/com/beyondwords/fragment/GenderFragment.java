@@ -8,12 +8,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import com.beyondwords.R;
@@ -34,6 +36,9 @@ import java.util.Locale;
 
     ArrayList<String> genderList =
                 new ArrayList<String>(Arrays.asList(genderArray));
+
+        private Button nextBt;
+        private ViewPager viewPager;
 
     Spinner genderSpin,countrySpinner,homeSpinner,languageSpinner, socioEconomicSpinner,ethnicitySpinner,religionSpinner;
 
@@ -56,6 +61,16 @@ import java.util.Locale;
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
         adapter = new SingleAdapter(getContext(), genderList);
+        nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
+        viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
+
+
+        nextBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+            }
+        });
         recyclerView.setAdapter(adapter);
         return view;
     }
