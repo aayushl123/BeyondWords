@@ -32,18 +32,18 @@ public class ConcernFragment2 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_survey_fragment5, container, false);
-        submitBt=(Button)view.findViewById(R.id.submit_bt);
+        //submitBt=(Button)view.findViewById(R.id.submit_bt);
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
 
 
-        submitBt.setOnClickListener(new View.OnClickListener() {
+        /*submitBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getContext(),"Response Submitted",Toast.LENGTH_LONG).show();
+
 
             }
-        });
+        });*/
         return view;
     }
 
