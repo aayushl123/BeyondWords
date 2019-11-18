@@ -25,32 +25,24 @@
             android:padding="@dimen/heading_size"
             android:background="@drawable/bg_color">
 
-            <ImageView
+           <!-- <ImageView
                 android:id="@+id/profession_ic"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:tint="@color/white"
-                android:src="@drawable/ic_gender"/>
+                android:src="@drawable/ic_gender"/>-->
 
             <TextView
                 android:id="@+id/professio_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/heading_size"
-                android:layout_toRightOf="@id/profession_ic"
                 android:layout_marginLeft="10dp"
                 android:text="Professional Training"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:src="@drawable/dotted"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/professio_text"
-                android:layerType="software" />
 
             <EditText
                 android:id="@+id/age_spinner"
@@ -58,6 +50,7 @@
                 android:layout_centerVertical="true"
                 android:layout_height="40dp"
                 android:inputType="text"
+                android:textColor="@color/white"
                 android:layout_below="@+id/professio_text"
                 android:backgroundTint="@color/white"
                 android:layout_marginTop="20dp"/>
@@ -79,12 +72,6 @@
             android:padding="20dp"
             android:background="@drawable/bg_color">
 
-            <ImageView
-                android:id="@+id/profession_status_ic"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:tint="@color/white"
-                android:src="@drawable/ic_gender"/>
 
 
             <TextView
@@ -92,19 +79,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/heading_size"
-                android:layout_toRightOf="@id/profession_status_ic"
                 android:layout_marginLeft="10dp"
                 android:text="Professional Status"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:src="@drawable/dotted"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/profession_status_ic_text"
-                android:layerType="software" />
 
             <EditText
                 android:id="@+id/profession_status_text"
@@ -112,8 +91,10 @@
                 android:layout_centerVertical="true"
                 android:layout_height="40dp"
                 android:inputType="text"
+
+                android:textColor="@color/white"
                 android:backgroundTint="@color/white"
-                android:layout_below="@+id/profession_status_ic"
+                android:layout_below="@+id/profession_status_ic_text"
 
                 android:layout_marginTop="20dp"/>
 
@@ -136,31 +117,20 @@
             android:padding="10dp"
             android:background="@drawable/bg_color">
 
-            <ImageView
-                android:id="@+id/organisation_ic"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:tint="@color/white"
-                android:src="@drawable/ic_gender"/>
+
 
             <TextView
                 android:id="@+id/organisation_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/heading_size"
-                android:layout_toRightOf="@id/organisation_ic"
                 android:layout_marginLeft="10dp"
+
                 android:text="Type of organization"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:src="@drawable/dotted"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/organisation_text"
-                android:layerType="software" />
+
 
 
             <EditText

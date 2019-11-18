@@ -45,13 +45,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:src="@drawable/dotted"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/gender_text"
-                android:layerType="software" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_marginTop="20dp"
@@ -101,13 +94,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:src="@drawable/dotted"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/age_text"
-                android:layerType="software" />
+
 
             <EditText
                 android:id="@+id/age_spinner"

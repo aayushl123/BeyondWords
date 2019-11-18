@@ -22,7 +22,7 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
     private ArrayList<String> options;
     // if checkedPosition = -1, there is no default selection
     // if checkedPosition = 0, 1st item is selected by default
-    private int checkedPosition = 0;
+    private int checkedPosition = -1;
 
     public SingleAdapter(Context context, ArrayList<String> options) {
         this.context = context;

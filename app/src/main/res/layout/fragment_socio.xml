@@ -41,13 +41,7 @@
                 android:text="Socio Economic Situation"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:src="@drawable/dotted"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/socio_economic_text"
-                android:layerType="software" />
+
 
 
             <androidx.recyclerview.widget.RecyclerView
