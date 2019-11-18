@@ -52,12 +52,7 @@ public class SocioFragment extends Fragment {
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
 
 
-        nextBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
-            }
-        });
+
         recyclerView.setAdapter(adapter);
         return view;
     }
