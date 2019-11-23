@@ -1,4 +1,4 @@
-    package com.beyondwords.fragment;
+package com.beyondwords.fragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,35 +13,28 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.SingleAdapter;
-import com.beyondwords.activity.adapter.SingleAdapter2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Locale;
 
 
-    public class GenderFragment extends Fragment {
+public class AgeFragment  extends Fragment {
 
 
     RecyclerView recyclerView;
-    private SingleAdapter2 adapter;
-    String[] genderArray = { "Male", "Female", "Other"};
+    private SingleAdapter adapter;
+    String[] age = { "<20", "20-40", "40-60",">60"};
 
     ArrayList<String> genderList =
-                new ArrayList<String>(Arrays.asList(genderArray));
+            new ArrayList<String>(Arrays.asList(age));
 
-        private Button nextBt;
-        private ViewPager viewPager;
 
-    Spinner genderSpin,countrySpinner,homeSpinner,languageSpinner, socioEconomicSpinner,ethnicitySpinner,religionSpinner;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,15 +48,13 @@ import java.util.Locale;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_survery_fragment1, container, false);
-        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerViewGender);
+        View view= inflater.inflate(R.layout.fragment_age, container, false);
+        recyclerView=(RecyclerView)view.findViewById(R.id.age_recycle);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
-        viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
-        adapter = new SingleAdapter2(getContext(), genderList,viewPager);
-        nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
+        adapter = new SingleAdapter(getContext(), genderList);
 
 
 

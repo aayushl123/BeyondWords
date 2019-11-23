@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.beyondwords.R;
@@ -20,6 +21,7 @@ public class SurveyActivity extends AppCompatActivity {
     ImageView fowardArrowBt,backwardArrowBt;
     Button phase2_next;
      ViewPager viewPager;
+     LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +32,20 @@ public class SurveyActivity extends AppCompatActivity {
         fowardArrowBt=findViewById(R.id.forward_arrow_bt);
         backwardArrowBt=findViewById(R.id.backward_arrow_bt);
         phase2_next=findViewById(R.id.phase2_next);
+        linearLayout=findViewById(R.id.emoji);
+        viewPager = findViewById(R.id.view_pager);
+
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+            }
+        });
 
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
 
-        viewPager = findViewById(R.id.view_pager);
+
 
 
         tabLayout.setupWithViewPager(viewPager, true);
@@ -46,7 +57,7 @@ public class SurveyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 viewPager.setCurrentItem(viewPager.getCurrentItem()-1);
                 System.out.println(viewPager.getCurrentItem());
-                if(viewPager.getCurrentItem()==9    ){
+                if(viewPager.getCurrentItem()==9){
                     phase2_next.setText("Next");
                     onNextBtClick();
                 }

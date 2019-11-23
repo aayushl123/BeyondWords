@@ -5,9 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +15,7 @@ import com.beyondwords.R;
 
 import java.util.ArrayList;
 
-public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleViewHolder> {
+public class SingleAdapter2 extends RecyclerView.Adapter<SingleAdapter2.SingleViewHolder> {
 
     private Context context;
     private ArrayList<String> options;
@@ -26,16 +24,13 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
     // if checkedPosition = 0, 1st item is selected by default
     private int checkedPosition = -1;
 
-    public SingleAdapter(Context context, ArrayList<String> options, ViewPager viewPager) {
+    public SingleAdapter2(Context context, ArrayList<String> options, ViewPager viewPager) {
         this.context = context;
         this.options = options;
         this.viewPager=viewPager;
     }
 
-    public SingleAdapter(Context context, ArrayList<String> options) {
-        this.context = context;
-        this.options = options;
-    }
+
 
     public void setEmployees(ArrayList<String> employees) {
         this.options = new ArrayList<>();
@@ -86,7 +81,7 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+
                     checkBox.setChecked(true);
                     if (checkedPosition != getAdapterPosition()) {
                         notifyItemChanged(checkedPosition);
