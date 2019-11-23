@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,11 +37,17 @@ public class SurveyActivity extends AppCompatActivity {
         linearLayout=findViewById(R.id.emoji);
         viewPager = findViewById(R.id.view_pager);
 
+        final View submitView = getLayoutInflater().inflate( R.layout.dialog_layout_submit, null);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+                Dialog dialog = new Dialog(SurveyActivity.this,R.style.Theme_Dialog);
+
+                dialog.setContentView(R.layout.dialog_layout_submit);
+                dialog.getWindow().setDimAmount(0);
+                dialog.show();
             }
+
         });
 
 
