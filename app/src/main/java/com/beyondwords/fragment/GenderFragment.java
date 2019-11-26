@@ -62,10 +62,8 @@ import java.util.Locale;
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
-        adapter = new SingleAdapter(getContext(), genderList,viewPager);
+        adapter = new SingleAdapter(getContext(), genderList);
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
-
-
 
         recyclerView.setAdapter(adapter);
         return view;

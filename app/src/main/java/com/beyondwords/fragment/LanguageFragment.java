@@ -92,6 +92,8 @@ public class LanguageFragment extends Fragment {
         }
 
         Collections.sort(languages);
+
+        languages.add("Other");
         for (String language : languages) {
             System.out.println(language);
         }

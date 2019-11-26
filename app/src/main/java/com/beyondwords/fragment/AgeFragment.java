@@ -28,7 +28,7 @@ public class AgeFragment  extends Fragment {
 
     RecyclerView recyclerView;
     private SingleAdapter adapter;
-    String[] age = { "<20", "20-40", "40-60",">60"};
+    String[] age = { "<20", "20-40", "40-60",">60","Other"};
 
     ArrayList<String> genderList =
             new ArrayList<String>(Arrays.asList(age));

@@ -26,7 +26,7 @@ public class SocioFragment extends Fragment {
 
     RecyclerView recyclerView;
     private SingleAdapter adapter;
-    String[] socio={"Upper Class", "Upper Middle Class", "Middle Class", "Lower Middle Class", "Lower Class", "Not Working"};
+    String[] socio={"Upper Class", "Upper Middle Class", "Middle Class", "Lower Middle Class", "Lower Class", "Not Working","Other"};
     ArrayList<String> socioArrayList =
             new ArrayList<String>(Arrays.asList(socio));
     private Button nextBt;

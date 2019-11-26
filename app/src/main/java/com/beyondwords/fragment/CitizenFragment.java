@@ -115,6 +115,7 @@ public class CitizenFragment extends Fragment {
         }
 
         Collections.sort(countries);
+        countries.add("Other");
         for (String country : countries) {
             System.out.println(country);
         }

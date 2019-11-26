@@ -29,7 +29,7 @@ public class ReligionFragment extends Fragment {
     RecyclerView recyclerView;
     private SingleAdapter adapter;
     String[] religion={"Austroasiatic","Buddhism","Chinese","Christianity","Druze","Gnosticism","Hinduism","Islam","Jainism","Judaism",
-            "Korean","Meivazhi","Manichaeism","Mazdakism","Nepalese religion","Paganism","Sarnaism","Sikhism","Taoism","No Religion"};
+            "Korean","Meivazhi","Manichaeism","Mazdakism","Nepalese religion","Paganism","Sarnaism","Sikhism","Taoism","Other"};
     ArrayList<String> religionArrayList =
             new ArrayList<String>(Arrays.asList(religion));
     private Button nextBt;
