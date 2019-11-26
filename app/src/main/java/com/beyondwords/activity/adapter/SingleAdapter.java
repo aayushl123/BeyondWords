@@ -1,9 +1,11 @@
 package com.beyondwords.activity.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -94,6 +96,9 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+
+                    closeKeyboard();
                     checkBox.setChecked(true);
                     if (checkedPosition != getAdapterPosition()) {
                         notifyItemChanged(checkedPosition);
@@ -154,6 +159,20 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
                 notifyDataSetChanged();
             }
         };
+
+    }
+
+    private void closeKeyboard() {
+
+        Activity activity = (Activity) context;
+
+        View view = activity.getCurrentFocus();
+
+
+            if (view != null) {
+                InputMethodManager imm = (InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
 
     }
 
