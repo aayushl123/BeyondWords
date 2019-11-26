@@ -36,7 +36,7 @@
         android:layout_below="@+id/forward_arrow_bt"
         android:layout_marginBottom="8dp"
         android:layout_centerInParent="true"
-        android:layout_above="@+id/emoji"
+        android:layout_above="@+id/linear2"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp" >
@@ -61,136 +61,148 @@
             app:tabIndicatorHeight="0dp"/>
     </RelativeLayout>
 
-
-
-
-    <Button
-        android:id="@+id/phase2_next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:visibility="gone"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/bt_blue_bg"
-        android:text="@string/phase2_Next"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        />
-
     <LinearLayout
-        android:id="@+id/emoji"
+        android:id="@+id/linear2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:orientation="vertical"
-        android:padding="@dimen/heading_size"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:layout_marginTop="@dimen/heading_size">
 
 
-        <LinearLayout
+        <Button
+            android:id="@+id/phase2_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="4">
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/view_pager"
+            android:layout_marginTop="20dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/bt_blue_bg"
+            android:text="@string/Submit_button"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            />
+
+        <LinearLayout
+            android:id="@+id/emoji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:padding="@dimen/heading_size"
+            >
+
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_weight="1">
+                android:orientation="horizontal"
+                android:weightSum="4">
 
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/notimportant"/>
-
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:orientation="vertical"
                     android:gravity="center"
-                    android:textAlignment="center"
-                    android:text="Not Important"/>
+                    android:layout_weight="1">
 
-            </LinearLayout>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/notimportant"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:text="Not Important"/>
+
+                </LinearLayout>
 
 
 
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_weight="1">
-
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/uncomfortable"/>
-
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_weight="1">
 
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:text="Made Me Uncomfortable"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/uncomfortable"/>
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_weight="1">
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:text="Made Me Uncomfortable"/>
 
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/donotunderstand"/>
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_weight="1">
 
-                    android:textAlignment="center"
-                    android:text="Did not Understand"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/donotunderstand"/>
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_weight="1">
+                        android:textAlignment="center"
+                        android:text="Did not Understand"/>
 
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/whythis"/>
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_weight="1">
 
-                    android:textAlignment="center"
-                    android:text="Why this?"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/whythis"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+
+                        android:textAlignment="center"
+                        android:text="Why this?"/>
+
+                </LinearLayout>
 
             </LinearLayout>
+
 
         </LinearLayout>
-
-
     </LinearLayout>
+
+
+
+
 
 
 </RelativeLayout>
