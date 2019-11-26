@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -31,6 +32,8 @@ public class EtnicityFragment extends Fragment {
     ArrayList<String> ethnicityArrayList =
             new ArrayList<String>(Arrays.asList(ethnicity));
     private Button nextBt;
+
+    private SearchView searchView;
     private ViewPager viewPager;
 
     @Override
@@ -53,7 +56,26 @@ public class EtnicityFragment extends Fragment {
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
 
 
+        searchView=(SearchView) view.findViewById(R.id.ethnic_search);
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                if (adapter != null){
+                    adapter.getFilter().filter(newText);
+                }
+
+                return true;
+            }
+        });
 
         adapter = new SingleAdapter(getContext(), ethnicityArrayList);
         recyclerView.setAdapter(adapter);

@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@color/transparent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        >
+
+        <ImageView
+            android:id="@+id/locicon"
+            android:src="@drawable/locicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="180dp"
+            android:elevation="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_bg"
+        android:layout_centerInParent="true"
+        >
 
 
-    <ImageView
-        android:id="@+id/locicon"
-        android:elevation="6dp"
-        android:src="@drawable/locicon"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"/>
+
+
+
 
     <LinearLayout
         android:id="@+id/mycontent"
         android:paddingTop="60dp"
-        android:background="@drawable/text_bg"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="140dp"
         android:gravity="center"
-        android:elevation="4dp"
         >
+
+
+
         <TextView
             android:textStyle="bold"
             android:text="Success!"
@@ -51,17 +66,25 @@
         <Button
             android:id="@+id/btn_close"
             android:layout_marginTop="30dp"
-            android:layout_width="118dp"
-            android:layout_height="85dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_marginBottom="24dp"
-            android:background="@drawable/btnclose"/>
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:text="Close"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/bt_blue_bg"/>
 
 
 
     </LinearLayout>
 
+    </RelativeLayout>
+
 </RelativeLayout>
 
+</RelativeLayout>
 
 
 

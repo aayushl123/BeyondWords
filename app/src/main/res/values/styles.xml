@@ -22,7 +22,7 @@
     </style>
     <style name="Theme_Dialog" parent="android:Theme.Light">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">#90000000</item>
+        <item name="android:background">#50FFFFFF</item>
     </style>
 
 </resources>

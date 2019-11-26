@@ -43,14 +43,20 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
-
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/language_search"
+                android:layout_width="match_parent"
+                app:iconTint="#FFFFFF"
+                android:layout_height="40dp"
+                android:layout_below="@+id/language_text"
+                />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView_language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/language_icon">
+                android:layout_below="@+id/language_search">
 
             </androidx.recyclerview.widget.RecyclerView>
 

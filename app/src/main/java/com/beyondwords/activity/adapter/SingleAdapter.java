@@ -5,8 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import android.widget.Filter;
+import android.widget.Filterable;
 
 
 import androidx.annotation.NonNull;
@@ -16,12 +20,15 @@ import androidx.viewpager.widget.ViewPager;
 import com.beyondwords.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleViewHolder> {
+public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleViewHolder> implements Filterable {
 
     private Context context;
     private ArrayList<String> options;
     ViewPager viewPager;
+
+    private List<String> itemListFiltered=new ArrayList<>();
     // if checkedPosition = -1, there is no default selection
     // if checkedPosition = 0, 1st item is selected by default
     private int checkedPosition = -1;
@@ -35,6 +42,7 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
     public SingleAdapter(Context context, ArrayList<String> options) {
         this.context = context;
         this.options = options;
+        this.itemListFiltered=options;
     }
 
     public void setEmployees(ArrayList<String> employees) {
@@ -52,12 +60,12 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
 
     @Override
     public void onBindViewHolder(@NonNull SingleViewHolder singleViewHolder, int position) {
-        singleViewHolder.bind(options.get(position));
+        singleViewHolder.bind(itemListFiltered.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return options.size();
+        return itemListFiltered.size();
     }
 
     class SingleViewHolder extends RecyclerView.ViewHolder {
@@ -86,7 +94,6 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
                     checkBox.setChecked(true);
                     if (checkedPosition != getAdapterPosition()) {
                         notifyItemChanged(checkedPosition);
@@ -103,4 +110,53 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
         }
         return null;
     }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+
+                String charString = constraint.toString();
+
+                System.out.println(charString);
+
+                if (charString.isEmpty()){
+                    itemListFiltered = options;
+                }else{
+
+                    ArrayList<String> filterList = new ArrayList<>();
+
+                    for (String data : options){
+
+                        if (data.toLowerCase().contains(charString)){
+                            filterList.add(data);
+                            System.out.println(data);
+                        }
+                    }
+
+
+                    itemListFiltered = filterList;
+
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = itemListFiltered;
+
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+                itemListFiltered = (ArrayList<String>) results.values;
+                System.out.println("published");
+                notifyDataSetChanged();
+            }
+        };
+
+    }
+
+
+
 }

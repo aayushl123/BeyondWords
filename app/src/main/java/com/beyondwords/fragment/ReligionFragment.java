@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,6 +34,8 @@ public class ReligionFragment extends Fragment {
             new ArrayList<String>(Arrays.asList(religion));
     private Button nextBt;
     private ViewPager viewPager;
+
+    private SearchView searchView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +59,27 @@ public class ReligionFragment extends Fragment {
 
 
         recyclerView.setAdapter(adapter);
+
+        searchView=(SearchView) view.findViewById(R.id.religion_search);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                if (adapter != null){
+                    adapter.getFilter().filter(newText);
+                }
+
+                return true;
+            }
+        });
         return view;
     }
 

@@ -43,14 +43,20 @@
                 android:textColor="@color/white"/>
 
 
-
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/ethnic_search"
+                android:layout_width="match_parent"
+                app:iconTint="#FFFFFF"
+                android:layout_height="40dp"
+                android:layout_below="@+id/ethic_text"
+                />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView_ethic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/ethic_icon"
+                android:layout_below="@+id/ethnic_search"
                 >
 
             </androidx.recyclerview.widget.RecyclerView>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -31,6 +32,8 @@ public class LanguageFragment extends Fragment {
     ArrayList<String> languages = new ArrayList<String>();
     private Button nextBt;
     private ViewPager viewPager;
+
+    private SearchView searchView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,26 @@ public class LanguageFragment extends Fragment {
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
 
 
+        searchView=(SearchView) view.findViewById(R.id.language_search);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                if (adapter != null){
+                    adapter.getFilter().filter(newText);
+                }
+
+                return true;
+            }
+        });
 
         return view;
     }

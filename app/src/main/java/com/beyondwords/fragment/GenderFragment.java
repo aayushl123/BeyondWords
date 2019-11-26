@@ -32,7 +32,7 @@ import java.util.Locale;
 
 
     RecyclerView recyclerView;
-    private SingleAdapter2 adapter;
+    private SingleAdapter adapter;
     String[] genderArray = { "Male", "Female", "Other"};
 
     ArrayList<String> genderList =
@@ -62,7 +62,7 @@ import java.util.Locale;
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
-        adapter = new SingleAdapter2(getContext(), genderList,viewPager);
+        adapter = new SingleAdapter(getContext(), genderList,viewPager);
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
 
 

@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,11 +42,11 @@ public class SurveyActivity extends AppCompatActivity {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog dialog = new Dialog(SurveyActivity.this,R.style.Theme_Dialog);
+                /*Dialog dialog = new Dialog(SurveyActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
 
                 dialog.setContentView(R.layout.dialog_layout_submit);
-                dialog.getWindow().setDimAmount(0);
-                dialog.show();
+                dialog.show();*/
+                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
             }
 
         });

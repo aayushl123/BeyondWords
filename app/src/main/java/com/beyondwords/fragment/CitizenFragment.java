@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,7 +29,8 @@ import java.util.Locale;
 public class CitizenFragment extends Fragment {
 
 
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
+    private SearchView searchView;
     private SingleAdapter adapter;
     ArrayList<String> countries = new ArrayList<String>();
 
@@ -50,6 +52,7 @@ public class CitizenFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_survey_fragment2, container, false);
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView_citizen);
 
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
@@ -61,6 +64,27 @@ public class CitizenFragment extends Fragment {
         adapter = new SingleAdapter(getContext(), countries);
         recyclerView.setAdapter(adapter);
 
+
+        searchView=(SearchView) view.findViewById(R.id.citizen_search);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                if (adapter != null){
+                    adapter.getFilter().filter(newText);
+                }
+
+                return true;
+            }
+        });
 
         return view;
     }
