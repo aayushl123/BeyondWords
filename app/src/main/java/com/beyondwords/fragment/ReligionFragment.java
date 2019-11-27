@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.beyondwords.R;
+import com.beyondwords.activity.adapter.ReligionAdapter;
 import com.beyondwords.activity.adapter.SingleAdapter;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class ReligionFragment extends Fragment {
 
 
     RecyclerView recyclerView;
-    private SingleAdapter adapter;
+    private ReligionAdapter adapter;
     String[] religion={"Austroasiatic","Buddhism","Chinese","Christianity","Druze","Gnosticism","Hinduism","Islam","Jainism","Judaism",
             "Korean","Meivazhi","Manichaeism","Mazdakism","Nepalese religion","Paganism","Sarnaism","Sikhism","Taoism","Other"};
     ArrayList<String> religionArrayList =
@@ -52,7 +53,7 @@ public class ReligionFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
-        adapter = new SingleAdapter(getContext(), religionArrayList);
+        adapter = new ReligionAdapter(getContext(), religionArrayList);
 
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);

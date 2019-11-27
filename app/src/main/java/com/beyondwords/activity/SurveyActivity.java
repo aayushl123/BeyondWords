@@ -190,8 +190,8 @@ public class SurveyActivity extends AppCompatActivity {
                 dialog.show();
                 PersonInfo personInfo=PersonInfo.getInstance();
                 db.insertData(personInfo.getmGender(),personInfo.getmAge(), personInfo.getmCitizenShip(), personInfo.getmCountry(),
-                        personInfo.getmLanguage(),
-                        null,null,null,null,
+                        personInfo.getmLanguage(), personInfo.getmEthnicity(), personInfo.getmReligion(), personInfo.getmSocio(),
+                        null,
                         null,null,null,
                         null,null,null,null);
 

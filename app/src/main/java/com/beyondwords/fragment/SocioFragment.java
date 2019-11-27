@@ -17,6 +17,7 @@ import android.widget.Button;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.SingleAdapter;
+import com.beyondwords.activity.adapter.SocioAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +26,7 @@ import java.util.Arrays;
 public class SocioFragment extends Fragment {
 
     RecyclerView recyclerView;
-    private SingleAdapter adapter;
+    private SocioAdapter adapter;
     String[] socio={"Upper Class", "Upper Middle Class", "Middle Class", "Lower Middle Class", "Lower Class", "Not Working","Other"};
     ArrayList<String> socioArrayList =
             new ArrayList<String>(Arrays.asList(socio));
@@ -47,7 +48,7 @@ public class SocioFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
-        adapter = new SingleAdapter(getContext(), socioArrayList);
+        adapter = new SocioAdapter(getContext(), socioArrayList);
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
 

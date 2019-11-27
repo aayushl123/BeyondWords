@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.beyondwords.R;
+import com.beyondwords.activity.adapter.EthnicityAdapter;
 import com.beyondwords.activity.adapter.SingleAdapter;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class EtnicityFragment extends Fragment {
 
 
     RecyclerView recyclerView;
-    private SingleAdapter adapter;
+    private EthnicityAdapter adapter;
     String[] ethnicity={"African","Asian","Caribbean","North American","North American Indian", "Chinese", "Filipino", "Japanese", "Korean", "Latin American", "South Asian", "South East Asian", "Other"};
     ArrayList<String> ethnicityArrayList =
             new ArrayList<String>(Arrays.asList(ethnicity));
@@ -77,7 +78,7 @@ public class EtnicityFragment extends Fragment {
             }
         });
 
-        adapter = new SingleAdapter(getContext(), ethnicityArrayList);
+        adapter = new EthnicityAdapter(getContext(), ethnicityArrayList);
         recyclerView.setAdapter(adapter);
         return view;
     }
