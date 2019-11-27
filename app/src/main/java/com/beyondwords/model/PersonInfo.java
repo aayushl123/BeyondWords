@@ -22,13 +22,13 @@ public class PersonInfo {
     private String mEthnicity;
     private String mReligion;
     private String mSocio;
-    private String mProfessionalTraning;
+    private String mProfessionalTraining;
     private String mProfessionalStatus;
     private String mOrgnaization;
     private String mOrganiState;
     private String mOrgnFunction;
     private String mFrequency;
-    private String mDesciption;
+    private String mDescription;
     private String mConcern;
     private String mWho;
     private String mWhere;
@@ -97,12 +97,12 @@ public class PersonInfo {
         this.mSocio = mSocio;
     }
 
-    public String getmProfessionalTraning() {
-        return mProfessionalTraning;
+    public String getmProfessionalTraining() {
+        return mProfessionalTraining;
     }
 
-    public void setmProfessionalTraning(String mProfessionalTraning) {
-        this.mProfessionalTraning = mProfessionalTraning;
+    public void setmProfessionalTraining(String mProfessionalTraining) {
+        this.mProfessionalTraining = mProfessionalTraining;
     }
 
     public String getmProfessionalStatus() {
@@ -145,12 +145,12 @@ public class PersonInfo {
         this.mFrequency = mFrequency;
     }
 
-    public String getmDesciption() {
-        return mDesciption;
+    public String getmDescription() {
+        return mDescription;
     }
 
-    public void setmDesciption(String mDesciption) {
-        this.mDesciption = mDesciption;
+    public void setmDescription(String mDescription) {
+        this.mDescription = mDescription;
     }
 
     public String getmConcern() {
