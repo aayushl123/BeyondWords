@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.beyondwords.R;
+import com.beyondwords.activity.adapter.GenderAdapter;
 import com.beyondwords.activity.adapter.SingleAdapter;
 import com.beyondwords.activity.adapter.SingleAdapter2;
 
@@ -32,7 +33,7 @@ import java.util.Locale;
 
 
     RecyclerView recyclerView;
-    private SingleAdapter adapter;
+    private GenderAdapter adapter;
     String[] genderArray = { "Male", "Female", "Other"};
 
     ArrayList<String> genderList =
@@ -62,7 +63,7 @@ import java.util.Locale;
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
-        adapter = new SingleAdapter(getContext(), genderList);
+        adapter = new GenderAdapter(getContext(), genderList);
 
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
 

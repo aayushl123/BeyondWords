@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import com.beyondwords.R;
 import com.beyondwords.activity.adapter.ViewPagerAdapter;
+import com.beyondwords.database.UserDatabase;
+import com.beyondwords.model.PersonInfo;
 import com.google.android.material.tabs.TabLayout;
 
 public class SurveyActivity extends AppCompatActivity {
@@ -32,6 +34,7 @@ public class SurveyActivity extends AppCompatActivity {
     Button phase2_next;
      ViewPager viewPager;
      LinearLayout linearLayout;
+     UserDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,6 +171,7 @@ public class SurveyActivity extends AppCompatActivity {
             }
         });
 
+        db=new UserDatabase(SurveyActivity.this);
        onSubmitBtClick();
     }
 
@@ -184,6 +188,12 @@ public class SurveyActivity extends AppCompatActivity {
                 dialog.setContentView(R.layout.dialog_layout_submit);
                 Button btn_close=(Button)dialog.findViewById(R.id.btn_close);
                 dialog.show();
+                PersonInfo personInfo=PersonInfo.getInstance();
+                db.insertData(personInfo.getmGender(),personInfo.getmAge(),
+                        null,null,null,
+                        null,null,null,null,
+                        null,null,null,
+                        null,null,null,null);
 
                 btn_close.setOnClickListener(new View.OnClickListener() {
                     @Override

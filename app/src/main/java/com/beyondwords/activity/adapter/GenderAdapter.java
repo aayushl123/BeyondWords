@@ -25,7 +25,7 @@ import com.beyondwords.model.PersonInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AgeAdapter extends RecyclerView.Adapter<AgeAdapter.SingleViewHolder> implements Filterable {
+public class GenderAdapter extends RecyclerView.Adapter<GenderAdapter.SingleViewHolder> implements Filterable {
 
     private Context context;
     private ArrayList<String> options;
@@ -36,13 +36,13 @@ public class AgeAdapter extends RecyclerView.Adapter<AgeAdapter.SingleViewHolder
     // if checkedPosition = 0, 1st item is selected by default
     private int checkedPosition = -1;
 
-    public AgeAdapter(Context context, ArrayList<String> options, ViewPager viewPager) {
+    public GenderAdapter(Context context, ArrayList<String> options, ViewPager viewPager) {
         this.context = context;
         this.options = options;
         this.viewPager=viewPager;
     }
 
-    public AgeAdapter(Context context, ArrayList<String> options) {
+    public GenderAdapter(Context context, ArrayList<String> options) {
         this.context = context;
         this.options = options;
         this.itemListFiltered=options;
@@ -105,8 +105,8 @@ public class AgeAdapter extends RecyclerView.Adapter<AgeAdapter.SingleViewHolder
                         notifyItemChanged(checkedPosition);
                         checkedPosition = getAdapterPosition();
                     }
-                    PersonInfo.getInstance().setmAge(textView.getText().toString());
-                    //System.out.println(textView.getText().toString());
+                    PersonInfo.getInstance().setmGender(textView.getText().toString());
+                    System.out.println(textView.getText().toString());
                 }
             });
         }
