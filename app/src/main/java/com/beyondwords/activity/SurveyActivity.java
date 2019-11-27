@@ -62,6 +62,8 @@ public class SurveyActivity extends AppCompatActivity {
 
 
 
+
+
         tabLayout.setupWithViewPager(viewPager, true);
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
 

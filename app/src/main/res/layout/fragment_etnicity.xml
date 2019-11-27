@@ -38,7 +38,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/ethic_icon"
-                android:text="Ethicity"
+                android:text="Ethnicity"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
