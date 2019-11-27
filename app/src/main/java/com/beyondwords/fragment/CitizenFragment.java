@@ -63,14 +63,7 @@ public class CitizenFragment extends Fragment {
 
         adapter = new SingleAdapter(getContext(), countries);
         recyclerView.setAdapter(adapter);
-        nextBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                adapter.getSelected();
 
-                System.out.println(adapter.getSelected());
-            }
-        });
 
 
         searchView=(SearchView) view.findViewById(R.id.citizen_search);

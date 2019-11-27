@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.beyondwords.R;
+import com.beyondwords.activity.adapter.AgeAdapter;
 import com.beyondwords.activity.adapter.SingleAdapter;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class AgeFragment  extends Fragment {
 
 
     RecyclerView recyclerView;
-    private SingleAdapter adapter;
+    private AgeAdapter adapter;
     String[] age = { "<20", "20-40", "40-60",">60","Other"};
 
     ArrayList<String> genderList =
@@ -54,7 +55,7 @@ public class AgeFragment  extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
-        adapter = new SingleAdapter(getContext(), genderList);
+        adapter = new AgeAdapter(getContext(), genderList);
 
 
 

@@ -63,6 +63,7 @@ import java.util.Locale;
 
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
         adapter = new SingleAdapter(getContext(), genderList);
+
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
 
         recyclerView.setAdapter(adapter);

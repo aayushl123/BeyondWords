@@ -36,12 +36,7 @@ public class ConcernFragment1 extends Fragment {
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
 
-        nextBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
 
         return view;
 

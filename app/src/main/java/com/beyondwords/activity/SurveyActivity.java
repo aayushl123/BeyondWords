@@ -47,6 +47,7 @@ public class SurveyActivity extends AppCompatActivity {
 
 
 
+
         final View submitView = getLayoutInflater().inflate( R.layout.dialog_layout_submit, null);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,7 +168,7 @@ public class SurveyActivity extends AppCompatActivity {
             }
         });
 
-        onSubmitBtClick();
+       onSubmitBtClick();
     }
 
     private void onSubmitBtClick(){
@@ -177,6 +178,7 @@ public class SurveyActivity extends AppCompatActivity {
         phase2_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("here");
                 Dialog dialog = new Dialog(SurveyActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
 
                 dialog.setContentView(R.layout.dialog_layout_submit);

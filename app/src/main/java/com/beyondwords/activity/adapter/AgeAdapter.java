@@ -25,7 +25,7 @@ import com.beyondwords.model.PersonInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleViewHolder> implements Filterable {
+public class AgeAdapter extends RecyclerView.Adapter<AgeAdapter.SingleViewHolder> implements Filterable {
 
     private Context context;
     private ArrayList<String> options;
@@ -36,13 +36,13 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
     // if checkedPosition = 0, 1st item is selected by default
     private int checkedPosition = -1;
 
-    public SingleAdapter(Context context, ArrayList<String> options, ViewPager viewPager) {
+    public AgeAdapter(Context context, ArrayList<String> options, ViewPager viewPager) {
         this.context = context;
         this.options = options;
         this.viewPager=viewPager;
     }
 
-    public SingleAdapter(Context context, ArrayList<String> options) {
+    public AgeAdapter(Context context, ArrayList<String> options) {
         this.context = context;
         this.options = options;
         this.itemListFiltered=options;
@@ -105,6 +105,8 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
                         notifyItemChanged(checkedPosition);
                         checkedPosition = getAdapterPosition();
                     }
+                    PersonInfo.getInstance().setmAge(textView.getText().toString());
+                    System.out.println(textView.getText().toString());
                 }
             });
         }
@@ -170,10 +172,10 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleView
         View view = activity.getCurrentFocus();
 
 
-            if (view != null) {
-                InputMethodManager imm = (InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-            }
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
 
     }
 
