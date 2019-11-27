@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.beyondwords.R;
+import com.beyondwords.activity.adapter.LanguageAdapter;
 import com.beyondwords.activity.adapter.SingleAdapter;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class LanguageFragment extends Fragment {
 
 
     RecyclerView recyclerView;
-    private SingleAdapter adapter;
+    private LanguageAdapter adapter;
     ArrayList<String> languages = new ArrayList<String>();
     private Button nextBt;
     private ViewPager viewPager;
@@ -50,7 +51,7 @@ public class LanguageFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
-        adapter = new SingleAdapter(getContext(), languages);
+        adapter = new LanguageAdapter(getContext(), languages);
         recyclerView.setAdapter(adapter);
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
