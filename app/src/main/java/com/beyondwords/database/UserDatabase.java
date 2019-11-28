@@ -8,35 +8,36 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class UserDatabase extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "beyondWords.db";
-    public static final String TABLE_NAME = "userInfo";
-    public static final String COL_1 = "user_id";
-    public static final String COL_2 = "gender";
-    public static final String COL_3 = "age";
-    public static final String COL_4 = "citizenship";
-    public static final String COL_5 = "home_country";
-    public static final String COL_6 = "language";
-    public static final String COL_7 = "ethnicity";
-    public static final String COL_8 = "religion";
-    public static final String COL_9 = "socio_economic_situation";
-    public static final String COL_10 = "professional_training";
-    public static final String COL_11 = "professional_status";
-    public static final String COL_12 = "type_of_organization";
-    public static final String COL_13 = "territory_of_organization";
-    public static final String COL_14 = "function_in_organization";
-    public static final String COL_15 = "frquency_of_contact";
-    public static final String COL_16 = "phase2_description";
-    public static final String COL_17 = "phase3_concern";
-
+    private static final String DATABASE_NAME = "beyondWords.db";
+    private static final String TABLE_NAME = "userInfo";
+    private static final String COL_1 = "user_id";
+    private static final String COL_2 = "gender";
+    private static final String COL_3 = "age";
+    private static final String COL_4 = "citizenship";
+    private static final String COL_5 = "home_country";
+    private static final String COL_6 = "language";
+    private static final String COL_7 = "ethnicity";
+    private static final String COL_8 = "religion";
+    private static final String COL_9 = "socio_economic_situation";
+    private static final String COL_10 = "professional_training";
+    private static final String COL_11 = "professional_status";
+    private static final String COL_12 = "type_of_organization";
+    private static final String COL_13 = "territory_of_organization";
+    private static final String COL_14 = "function_in_organization";
+    private static final String COL_15 = "frquency_of_contact";
+    private static final String COL_16 = "phase2_description";
+    private static final String COL_17 = "phase3_concern";
+    private static final String COL_18 = "date";
 
     public UserDatabase(Context context) {
-        super(context, DATABASE_NAME, null, 1);
+        super(context, DATABASE_NAME, null, 2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String l_sql = "CREATE TABLE "+ TABLE_NAME + "( "+
                 COL_1+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                COL_18+ " DATETIME DEFAULT CURRENT_TIMESTAMP , "+
                 COL_2+ " TEXT, "+
                 COL_3+ " TEXT, "+
                 COL_4+ " TEXT, "+
@@ -90,8 +91,6 @@ public class UserDatabase extends SQLiteOpenHelper {
         if (result == -1){
             return false;
         }
-        else {
-            return true;
-        }
+        return true;
     }
 }
