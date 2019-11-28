@@ -190,9 +190,9 @@ public class SurveyActivity extends AppCompatActivity {
                 Button btn_close=(Button)dialog.findViewById(R.id.btn_close);
                 dialog.show();
                 PersonInfo personInfo=PersonInfo.getInstance();
-                db.insertData(personInfo.getmGender(),personInfo.getmAge(),
-                        null,null,null,
-                        null,null,null,null,
+                db.insertData(personInfo.getmGender(),personInfo.getmAge(), personInfo.getmCitizenShip(), personInfo.getmCountry(),
+                        personInfo.getmLanguage(), personInfo.getmEthnicity(), personInfo.getmReligion(), personInfo.getmSocio(),
+                        null,
                         null,null,null,
                         null,null,null,null);
                 sendEmail();

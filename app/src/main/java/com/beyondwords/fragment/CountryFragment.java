@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import com.beyondwords.R;
+import com.beyondwords.activity.adapter.CountryAdapter;
 import com.beyondwords.activity.adapter.SingleAdapter;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class CountryFragment extends Fragment {
 
 
     RecyclerView recyclerView;
-    private SingleAdapter adapter;
+    private CountryAdapter adapter;
     ArrayList<String> countries = new ArrayList<String>();
     private Button nextBt;
 
@@ -53,7 +54,7 @@ public class CountryFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
-        adapter = new SingleAdapter(getContext(), countries);
+        adapter = new CountryAdapter(getContext(), countries);
         recyclerView.setAdapter(adapter);
 
         nextBt=(Button)getActivity().findViewById(R.id.phase2_next);

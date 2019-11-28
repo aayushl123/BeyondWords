@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import com.beyondwords.R;
+import com.beyondwords.activity.adapter.CitizenshipAdapter;
 import com.beyondwords.activity.adapter.SingleAdapter;
 
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class CitizenFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private SearchView searchView;
-    private SingleAdapter adapter;
+    private CitizenshipAdapter adapter;
     ArrayList<String> countries = new ArrayList<String>();
 
     private Button nextBt;
@@ -61,7 +62,7 @@ public class CitizenFragment extends Fragment {
 
 
 
-        adapter = new SingleAdapter(getContext(), countries);
+        adapter = new CitizenshipAdapter(getContext(), countries);
         recyclerView.setAdapter(adapter);
 
 
