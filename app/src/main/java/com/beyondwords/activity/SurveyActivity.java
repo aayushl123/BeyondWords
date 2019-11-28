@@ -12,6 +12,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.Network;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +49,7 @@ public class SurveyActivity extends AppCompatActivity {
         phase2_next=findViewById(R.id.phase2_next);
         linearLayout=findViewById(R.id.emoji);
         viewPager = findViewById(R.id.view_pager);
+
 
 
 
@@ -177,8 +180,6 @@ public class SurveyActivity extends AppCompatActivity {
 
     private void onSubmitBtClick(){
 
-
-
         phase2_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,6 +195,7 @@ public class SurveyActivity extends AppCompatActivity {
                         null,null,null,null,
                         null,null,null,
                         null,null,null,null);
+                sendEmail();
 
                 btn_close.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -209,6 +211,20 @@ public class SurveyActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
+    }
+
+    private void sendEmail()
+    {
+        String mail = "Kaur.ramandeep92@gmail.com";
+        String subject = "Survey Alert: 1 New Submission Made!";
+        String message = "Hi Admin!\n\n1 new person submitted their response through BeyondWords!\n\nHave a wonderful day!";
+
+        EmailAPI email = new EmailAPI(this,mail,subject,message);
+        email.execute();
     }
 
     private void closeKeyboard() {
@@ -224,5 +240,7 @@ public class SurveyActivity extends AppCompatActivity {
         }
 
     }
+
+
 
 }

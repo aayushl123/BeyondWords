@@ -57,7 +57,7 @@
             android:lineSpacingExtra="4dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:text="Thank you for taking the survey. W"
+            android:text="Thank you for taking the survey."
             android:textColor="#343434"
             android:textSize="16sp"
             android:layout_width="wrap_content"
