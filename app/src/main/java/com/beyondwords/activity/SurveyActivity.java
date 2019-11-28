@@ -195,7 +195,8 @@ public class SurveyActivity extends AppCompatActivity {
                         personInfo.getmLanguage(), personInfo.getmEthnicity(), personInfo.getmReligion(), personInfo.getmSocio(),
                         personInfo.getmProfessionalTraining(), personInfo.getmProfessionalStatus(), personInfo.getmOrgnaization(),
                         personInfo.getmOrganiState(), personInfo.getmOrgnFunction(), personInfo.getmFrequency(),
-                        null,null);
+                        personInfo.getmDescription(),personInfo.getmConcern());
+
                 sendEmail();
 
                 btn_close.setOnClickListener(new View.OnClickListener() {
