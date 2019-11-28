@@ -31,7 +31,7 @@ public class AgeFragment  extends Fragment {
     private AgeAdapter adapter;
     String[] age = { "<20", "20-40", "40-60",">60","Other"};
 
-    ArrayList<String> genderList =
+    ArrayList<String> ageList =
             new ArrayList<String>(Arrays.asList(age));
 
 
@@ -55,7 +55,7 @@ public class AgeFragment  extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), 0));
 
-        adapter = new AgeAdapter(getContext(), genderList);
+        adapter = new AgeAdapter(getContext(), ageList);
 
 
 

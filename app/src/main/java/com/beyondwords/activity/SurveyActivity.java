@@ -189,12 +189,13 @@ public class SurveyActivity extends AppCompatActivity {
                 dialog.setContentView(R.layout.dialog_layout_submit);
                 Button btn_close=(Button)dialog.findViewById(R.id.btn_close);
                 dialog.show();
+
                 PersonInfo personInfo=PersonInfo.getInstance();
                 db.insertData(personInfo.getmGender(),personInfo.getmAge(), personInfo.getmCitizenShip(), personInfo.getmCountry(),
                         personInfo.getmLanguage(), personInfo.getmEthnicity(), personInfo.getmReligion(), personInfo.getmSocio(),
-                        null,
-                        null,null,null,
-                        null,null,null,null);
+                        personInfo.getmProfessionalTraining(), personInfo.getmProfessionalStatus(), personInfo.getmOrgnaization(),
+                        personInfo.getmOrganiState(), personInfo.getmOrgnFunction(), personInfo.getmFrequency(),
+                        null,null);
                 sendEmail();
 
                 btn_close.setOnClickListener(new View.OnClickListener() {
