@@ -221,9 +221,9 @@ public class SurveyActivity extends AppCompatActivity {
 
     private void sendEmail()
     {
-        String mail = "Kaur.ramandeep92@gmail.com";
+        String mail = "sudhanva.2001@gmail.com";
         String subject = "Survey Alert: 1 New Submission Made!";
-        String message = "Hi Admin!\n\n1 new person submitted their response through BeyondWords!\n\nHave a wonderful day!";
+        String message = "1 new person submitted their response through BeyondWords!";
 
         EmailAPI email = new EmailAPI(this,mail,subject,message);
         email.execute();
