@@ -5,6 +5,20 @@
     <string name="phase2_Next">Next</string>
     <string name="Submit_button">Submit</string>
 
+    <string name="phase1InfoString">In this section, select/write all the necessary information that applies to you.
+        \n\nIf any of the questions deems irrelevant to you, please provide a feedback from the options available at the bottom of the screen!
+        \n\nSwipe right to get started!</string>
+
+    <string name="phase2InfoString">In this section, describe the situation you faced.
+        \n\nPlease try to limit yourself to 5 sentences and describe the entire situation in the clearest possible terms.
+        \n\nShould you need any assistance, please follow the prompts on each of the text area to help you describe better.
+        \n\nSwipe right and tell us!</string>
+
+    <string name="phase3InfoString">In this section, highlight the concern you have with the described situation.
+        \n\nPlease try to limit yourself to 5 sentences and bring out the major concern you have with the inter-cultural interaction.
+        \n\nShould you need any assistance, please follow the prompt on the text area and start describing the concern.
+        \n\nSwipe right, we\'re listening!</string>
+
     <string name="terms_cond">Terms and Conditions</string>
     <string name="describe_sit">Describe your Situation</string>
     <string name="phase2_ques">In the most neutral terms, describe the situation you faced. It is recommended that you include the W"s (Who, When, What) and How in your description. Try to limit the description to 5 sentences.</string>

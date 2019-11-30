@@ -27,11 +27,13 @@
                 android:id="@+id/age_icon1"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginTop="20dp"
                 android:tint="@color/white"
                 android:src="@drawable/ic_age"/>
 
             <TextView
                 android:id="@+id/age_text1"
+                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/heading_size"
