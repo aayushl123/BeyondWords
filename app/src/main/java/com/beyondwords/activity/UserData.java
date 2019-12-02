@@ -34,7 +34,7 @@ public class UserData extends AppCompatActivity {
 
 
     private static final String TABLE_NAME = "userInfo";
-    private LinearLayout exportBt;
+    private Button exportBt;
     ArrayList<String> userArray=new ArrayList<>();
 
 

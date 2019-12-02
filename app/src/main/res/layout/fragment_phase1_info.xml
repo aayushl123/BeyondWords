@@ -43,6 +43,7 @@
                 android:layout_below="@id/phase1Info_text"
                 android:background="@drawable/text_bg"
                 android:padding="20dp"
+                android:textSize="18sp"
                 android:text="@string/phase1InfoString"
                 android:textColor="@color/black" />
 
