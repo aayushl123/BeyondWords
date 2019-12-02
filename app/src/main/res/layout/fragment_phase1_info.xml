@@ -39,7 +39,7 @@
                 android:id="@+id/phase1Info_Instructions"
                 android:layout_marginTop="40dp"
                 android:layout_width="500dp"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/phase1Info_text"
                 android:background="@drawable/text_bg"
                 android:padding="20dp"

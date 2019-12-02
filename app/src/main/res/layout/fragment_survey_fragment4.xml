@@ -97,7 +97,7 @@
         android:background="@drawable/text_bg"
         android:textColor="@color/black"
         android:gravity="start"
-        android:hint="\t With whom it happened..."
+        android:hint="\t With whom were you interacting..."
         android:padding="10dp" />
     <EditText
         android:id="@+id/phase2_user_response"
@@ -110,7 +110,7 @@
         android:background="@drawable/text_bg"
         android:textColor="@color/black"
         android:gravity="start"
-        android:hint="\t Here goes the additional details.."
+        android:hint="\t Start Describing the situation here.\n\nAs a Canadian..."
         android:padding="10dp" />
 
    <!-- <Button
