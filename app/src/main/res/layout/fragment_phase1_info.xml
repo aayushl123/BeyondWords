@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_centerHorizontal="true"
-                android:text="          Phase 1\n Mandatory Section"
+                android:text="          Phase 1\n Preliminary Section"
                 android:textColor="@color/white"
                 android:textSize="@dimen/heading_size"
                 android:textStyle="bold" />
@@ -47,6 +47,27 @@
                 android:textColor="@color/black" />
 
 
+            <ImageView
+                android:id="@+id/swipe"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/swipe_left"
+                android:layout_below="@+id/phase1Info_Instructions"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:tint="@color/white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/swipe"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_centerHorizontal="true"
+                android:text="Swipe Left"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

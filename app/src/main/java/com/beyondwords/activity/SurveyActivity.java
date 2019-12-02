@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -48,7 +49,6 @@ public class SurveyActivity extends AppCompatActivity {
      ViewPager viewPager;
      LinearLayout linearLayout,linearLayout2;
      UserDatabase db;
-    private String TAG="Act";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,6 @@ public class SurveyActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
 
 
-        linearLayout2.setVisibility(View.GONE);
 
 
 
@@ -161,20 +160,20 @@ public class SurveyActivity extends AppCompatActivity {
                 closeKeyboard();
 
                 System.out.println(position);
-                if(position==14){
+                if(position==13){
 
                     System.out.println("here at last");
 
                     linearLayout.setVisibility(View.GONE);
                     phase2_next.setVisibility(View.VISIBLE);
-
                     linearLayout2.setVisibility(View.VISIBLE);
 
+
                 }
-                else if(position==0 || position==11 || position==13 ||position==12) {
+                else if(position==0 || position==10 || position==12 ||position==11) {
                     linearLayout.setVisibility(View.GONE);
-                    linearLayout2.setVisibility(View.GONE);
                     phase2_next.setVisibility(View.GONE);
+                    linearLayout2.setVisibility(View.GONE);
                 }
                 else {
 
@@ -182,6 +181,7 @@ public class SurveyActivity extends AppCompatActivity {
                     phase2_next.setVisibility(View.GONE);
 
                     linearLayout2.setVisibility(View.VISIBLE);
+
 
                 }
             }
@@ -204,24 +204,7 @@ public class SurveyActivity extends AppCompatActivity {
 
     }
 
-    public  boolean isStoragePermissionGranted() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    == PackageManager.PERMISSION_GRANTED) {
-                Log.v(TAG,"Permission is granted");
-                return true;
-            } else {
 
-                Log.v(TAG,"Permission is revoked");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-                return false;
-            }
-        }
-        else { //permission is automatically granted on sdk<23 upon installation
-            Log.v(TAG,"Permission is granted");
-            return true;
-        }
-    }
 
     private void onSubmitBtClick(){
 
@@ -230,8 +213,9 @@ public class SurveyActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(checkCitizenValidation()){
-                if (isStoragePermissionGranted()) {
-                    Dialog dialog = new Dialog(SurveyActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
+
+
+                    final Dialog dialog = new Dialog(SurveyActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
                     dialog.setContentView(R.layout.dialog_layout_submit);
                     Button btn_close = (Button) dialog.findViewById(R.id.btn_close);
                     dialog.show();
@@ -245,15 +229,22 @@ public class SurveyActivity extends AppCompatActivity {
 
                     sendEmail();
 
+                    System.out.println(personInfo.getmGender()+personInfo.getmAge()+personInfo.getmCitizenShip()+personInfo.getmConcern());
+
                     btn_close.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+
+                          dialog.cancel();
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                                 SurveyActivity.this.finishAffinity();
                             } else {
                                 SurveyActivity.this.finish();
-                                System.exit(0);
+
                             }
+
+                            startActivity(new Intent(SurveyActivity.this, LoginActivity.class));
+
                         }
                     });
 
@@ -265,7 +256,7 @@ public class SurveyActivity extends AppCompatActivity {
                 }
 
 
-            }
+
         });
 
 
@@ -273,6 +264,14 @@ public class SurveyActivity extends AppCompatActivity {
 
     }
 
+   /* public Cursor getuser()
+    {
+        String[] columns = new String[]{PRIME_ID, USER_NAME, USER_PASSWORD};
+        Cursor cursor = sqLiteDatabase.query(
+                LASTLOGIN, columns, null, null, null, null, PRIME_ID +" DESC");
+        Log.d("TAG", columns[1]);
+        return cursor;
+    }*/
 
     private boolean checkCitizenValidation()
     {
@@ -319,7 +318,7 @@ public class SurveyActivity extends AppCompatActivity {
             exportDir.mkdirs();
         }
 
-        File file = new File(exportDir, "csvname.csv");
+        File file = new File(exportDir, "BeyondWords.csv");
         try
         {
             file.createNewFile();
@@ -330,7 +329,32 @@ public class SurveyActivity extends AppCompatActivity {
             while(curCSV.moveToNext())
             {
                 //Which column you want to exprort
-                String arrStr[] ={curCSV.getString(0),curCSV.getString(1), curCSV.getString(2)};
+                String arrStr[] ={curCSV.getString(0),curCSV.getString(1), curCSV.getString(2),
+                        curCSV.getString(3),
+                        curCSV.getString(4),
+                        curCSV.getString(5),
+                        curCSV.getString(6),
+                        curCSV.getString(7),
+                        curCSV.getString(8),
+
+                        curCSV.getString(9),
+
+                        curCSV.getString(10),
+
+                        curCSV.getString(11),
+
+                        curCSV.getString(12),
+
+                        curCSV.getString(13),
+
+                        curCSV.getString(14),
+
+                        curCSV.getString(15),
+
+                        curCSV.getString(16),
+
+                        curCSV.getString(17),
+                };
                 csvWrite.writeNext(arrStr);
             }
             csvWrite.close();
@@ -343,15 +367,5 @@ public class SurveyActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-            Log.v(TAG,"Permission: "+permissions[0]+ "was "+grantResults[0]);
-            //resume tasks needing this permission
-        }
-        else {
-            System.out.println("Permisiion denies");
-        }
-    }
+
 }

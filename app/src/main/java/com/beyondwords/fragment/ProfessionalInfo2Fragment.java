@@ -25,8 +25,6 @@ public class ProfessionalInfo2Fragment extends Fragment {
     private Button nextBt;
     private ViewPager viewPager;
     private EditText orgTerritory;
-    private EditText funcOrg;
-    private EditText freqContact;
 
 
     @Override
@@ -46,8 +44,7 @@ public class ProfessionalInfo2Fragment extends Fragment {
         viewPager=(ViewPager)getActivity().findViewById(R.id.view_pager);
 
         orgTerritory = (EditText)view.findViewById(R.id.org_territory);
-        funcOrg = (EditText)view.findViewById(R.id.func_org);
-        freqContact = (EditText)view.findViewById(R.id.freq_contact);
+       // funcOrg = (EditText)view.findViewById(R.id.func_org);
 
         orgTerritory.addTextChangedListener(new TextWatcher() {
             @Override
@@ -65,7 +62,9 @@ public class ProfessionalInfo2Fragment extends Fragment {
             }
         });
 
-        funcOrg.addTextChangedListener(new TextWatcher() {
+
+
+        /*funcOrg.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable s) { }
 
@@ -79,23 +78,7 @@ public class ProfessionalInfo2Fragment extends Fragment {
                     PersonInfo.getInstance().setmOrgnFunction(str);
                 }
             }
-        });
-
-        freqContact.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) { }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.length() != 0){
-                    String str = freqContact.getText().toString();
-                    PersonInfo.getInstance().setmFrequency(str);
-                }
-            }
-        });
+        });*/
 
 
 

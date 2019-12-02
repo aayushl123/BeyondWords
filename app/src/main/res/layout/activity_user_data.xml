@@ -12,6 +12,7 @@
     </ListView>
 
     <LinearLayout
+        android:id="@+id/exportbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/text_bg"

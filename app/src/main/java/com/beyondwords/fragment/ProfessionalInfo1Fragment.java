@@ -19,6 +19,9 @@ public class ProfessionalInfo1Fragment extends Fragment {
     private EditText profStatus;
     private EditText orgType;
 
+
+    private EditText freqContact;
+
     RecyclerView recyclerView;
 
     @Override
@@ -36,6 +39,9 @@ public class ProfessionalInfo1Fragment extends Fragment {
         profTraining = (EditText)view.findViewById(R.id.prof_training_text);
         profStatus = (EditText)view.findViewById(R.id.profession_status_text);
         orgType = (EditText)view.findViewById(R.id.organisation_ed_view);
+
+        freqContact = (EditText)view.findViewById(R.id.freq_contact);
+
 
         profTraining.addTextChangedListener(new TextWatcher() {
             @Override
@@ -84,6 +90,23 @@ public class ProfessionalInfo1Fragment extends Fragment {
                 }
             }
         });
+
+        freqContact.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) { }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() != 0){
+                    String str = freqContact.getText().toString();
+                    PersonInfo.getInstance().setmFrequency(str);
+                }
+            }
+        });
+
 
         return view;
     }

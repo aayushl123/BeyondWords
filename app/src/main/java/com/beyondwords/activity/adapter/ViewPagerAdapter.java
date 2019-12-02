@@ -54,16 +54,14 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
             case 9:
                 return new ProfessionalInfo1Fragment(); //childFragment4 at position 4
             case 10:
-                return new ProfessionalInfo2Fragment(); //childFragment4 at position 4
-            case 11:
                 return new Phase2Info(); //childFragment4 at position 4
 
-            case 12:
+            case 11:
                 return new ConcernFragment1(); //childFragment4 at position 4
 
-            case 13:
+            case 12:
                 return new Phase3Info();
-            case 14:
+            case 13:
                 return new ConcernFragment2(); //childFragment4 at position 4\
 
         }
@@ -72,6 +70,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
 
     @Override
     public int getCount() {
-        return 15; //five fragments
+        return 14; //five fragments
     }
 }
