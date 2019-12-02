@@ -8,7 +8,33 @@
     <ListView
         android:id="@+id/mobile_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content" >
     </ListView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_bg"
+        android:layout_gravity="center_horizontal"
+        android:padding="4dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/colorPrimary"
+            android:text="Export">
+        </Button>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/csv">
+        </ImageView>
+
+    </LinearLayout>
+
 
 </LinearLayout>

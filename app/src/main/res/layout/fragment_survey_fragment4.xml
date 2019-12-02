@@ -59,10 +59,11 @@
         android:text="@string/phase2_ques"
         />
 
+
     <EditText
-        android:id="@+id/phase2_user_response"
+        android:id="@+id/where_txt"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         android:layout_below="@+id/phase2_question"
         android:layout_above="@+id/phase2_next"
         android:layout_centerInParent="true"
@@ -70,7 +71,46 @@
         android:background="@drawable/text_bg"
         android:textColor="@color/black"
         android:gravity="start"
-        android:hint="\t As a Canadian, Indian, American..."
+        android:hint="\t What happened..."
+        android:padding="10dp" />
+    <EditText
+        android:id="@+id/what_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/where_txt"
+        android:layout_above="@+id/phase2_next"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/text_bg"
+        android:textColor="@color/black"
+        android:gravity="start"
+        android:hint="\t Where it happened..."
+        android:padding="10dp" />
+    <EditText
+        android:id="@+id/with_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/what_text"
+        android:layout_above="@+id/phase2_next"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/text_bg"
+        android:textColor="@color/black"
+        android:gravity="start"
+        android:hint="\t With whom it happened..."
+        android:padding="10dp" />
+    <EditText
+        android:id="@+id/phase2_user_response"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/with_text"
+        android:layout_above="@+id/phase2_next"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/text_bg"
+        android:textColor="@color/black"
+        android:gravity="start"
+        android:hint="\t Here goes the additional details.."
         android:padding="10dp" />
 
    <!-- <Button

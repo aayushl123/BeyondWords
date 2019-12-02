@@ -46,7 +46,7 @@ public class SurveyActivity extends AppCompatActivity {
     ImageView fowardArrowBt,backwardArrowBt;
     Button phase2_next;
      ViewPager viewPager;
-     LinearLayout linearLayout;
+     LinearLayout linearLayout,linearLayout2;
      UserDatabase db;
     private String TAG="Act";
 
@@ -60,9 +60,11 @@ public class SurveyActivity extends AppCompatActivity {
         backwardArrowBt=findViewById(R.id.backward_arrow_bt);
         phase2_next=findViewById(R.id.phase2_next);
         linearLayout=findViewById(R.id.emoji);
+        linearLayout2=(LinearLayout)findViewById(R.id.linear2);
         viewPager = findViewById(R.id.view_pager);
 
 
+        linearLayout2.setVisibility(View.GONE);
 
 
 
@@ -166,11 +168,20 @@ public class SurveyActivity extends AppCompatActivity {
                     linearLayout.setVisibility(View.GONE);
                     phase2_next.setVisibility(View.VISIBLE);
 
+                    linearLayout2.setVisibility(View.VISIBLE);
+
+                }
+                else if(position==0 || position==11 || position==13 ||position==12) {
+                    linearLayout.setVisibility(View.GONE);
+                    linearLayout2.setVisibility(View.GONE);
+                    phase2_next.setVisibility(View.GONE);
                 }
                 else {
 
                     linearLayout.setVisibility(View.VISIBLE);
                     phase2_next.setVisibility(View.GONE);
+
+                    linearLayout2.setVisibility(View.VISIBLE);
 
                 }
             }
