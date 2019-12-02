@@ -16,7 +16,7 @@ public class PersonInfo {
 
     private String mGender;
     private String mAge;
-    private String mCitizenShip;
+    private String mCitizenShip="";
     private String mCountry;
     private String mLanguage;
     private String mEthnicity;

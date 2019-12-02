@@ -218,10 +218,9 @@ public class SurveyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if(checkCitizenValidation()){
                 if (isStoragePermissionGranted()) {
-                    System.out.println("here");
                     Dialog dialog = new Dialog(SurveyActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
-
                     dialog.setContentView(R.layout.dialog_layout_submit);
                     Button btn_close = (Button) dialog.findViewById(R.id.btn_close);
                     dialog.show();
@@ -252,6 +251,8 @@ public class SurveyActivity extends AppCompatActivity {
 
 
                 }
+                }
+
 
             }
         });
@@ -259,6 +260,18 @@ public class SurveyActivity extends AppCompatActivity {
 
 
 
+    }
+
+
+    private boolean checkCitizenValidation()
+    {
+       if (PersonInfo.getInstance().getmCitizenShip().equalsIgnoreCase("")){
+           viewPager.setCurrentItem(3);
+           return false;
+       }
+       else {
+           return true;
+       }
     }
 
     private void sendEmail()
