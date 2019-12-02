@@ -27,12 +27,10 @@
 
             <TextView
                 android:id="@+id/phase3Info_text"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginLeft="95dp"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
                 android:text="            Phase 3\n Concern Description"
                 android:textColor="@color/white"
                 android:textSize="@dimen/heading_size"
@@ -44,7 +42,7 @@
                 android:layout_width="500dp"
                 android:layout_height="230dp"
                 android:layout_below="@id/phase3Info_text"
-                android:background="@color/palewhite"
+                android:background="@drawable/text_bg"
                 android:padding="20dp"
                 android:text="@string/phase3InfoString"
                 android:textColor="@color/black" />

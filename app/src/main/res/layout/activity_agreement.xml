@@ -35,10 +35,11 @@
     <TextView
         android:id="@+id/text_view2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/linear"
         android:layout_marginTop="30dp"
         android:background="@drawable/bg_button"
+        android:layout_above="@id/chk_box"
         android:padding="20dp"
         android:text="@string/terms_statement"
         android:textColor="#000000" />
@@ -49,7 +50,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:layout_below="@+id/text_view2"
         android:textColorHighlight="@color/white"
         android:shadowColor="@color/white"
         android:textColorHint="@color/white"
@@ -64,7 +64,6 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="88dp"
         android:background="@drawable/bg_button"
         android:text="Next"
